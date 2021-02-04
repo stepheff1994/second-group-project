@@ -13,36 +13,34 @@ const session = require('express-session');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+const sequelize = require("./config/connection");
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
-  secret: 'bigbluedog',
-  cookie: {
-        // Session will automatically expire in 10 minutes
-        expires: 10 * 60 * 1000
-  },
-  resave: true,
+  secret: 'Super secret secret',
+  // with rolling to true expiration is reset to the original maxAge
   rolling: true,
+  // maxage set for session to expire thus requiring user to log in again (currently set to 10 minutes)
+  cookie: { maxAge: 600000 },
+  resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
-    db: sequelize
-  }),
+    db: sequelize,
+  })
 };
 
-app.get('/', (req, res)=> res.send('Second Project'))
 app.use(session(sess));
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
 
-app.engine('handlebars', hbs.engine);
+app.engine('handlebars', exphbs({ defaultLayout: "main" }));
 app.set('view engine', 'handlebars');
 
-app.use(routes);
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')));
 
-// turn on connection to db and server
+// app.use(require('./controllers/'));
+
 sequelize.sync({ force: false }).then(() => {
-  
-app.listen(PORT, console.log(`Server started on port ${PORT}`));
+  app.listen(PORT, () => console.log('Now listening'));
 });
