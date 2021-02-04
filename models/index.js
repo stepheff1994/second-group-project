@@ -1,6 +1,6 @@
 // const User = require("./User");
 // const Drawing = require("./Drawing");
-// const Comment = require('./Comment');
+const Comment = require('./Comment');
 
 //create associations
 // User.hasMany(Drawing, {
@@ -27,4 +27,4 @@
 //     foreignKey: 'drawing_id'
 // });
 
-// module.exports = { User, Drawing, Comment};
+module.exports = { Comment };
