@@ -1,5 +1,5 @@
-// const User = require("./User");
-// const Drawing = require("./Drawing");
+const User = require('./User');
+const Drawing = require('./Drawing');
 const Comment = require('./Comment');
 
 //create associations

@@ -9,7 +9,7 @@ const drawdata = [
     {
         title: 'Morbi non quam nec dui luctus rutrum.',
         drawing: ('../public/uploads/drawings/testdrawing2.png'),
-        user_id: 8
+        user_id: 2
     },
     {
         title: 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.',
@@ -18,6 +18,6 @@ const drawdata = [
     }
 ];
 
-const seedDraws = () => Draw.bulkCreate(drawdata);
+const seedDraws = () => Drawing.bulkCreate(drawdata);
 
 module.exports = seedDraws;

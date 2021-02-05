@@ -34,7 +34,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req, res)=> res.send('Second Project'))
+app.get('/', (req, res) => res.send('Second Project'))
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
@@ -43,6 +43,6 @@ app.use(routes);
 app.use(require('./controllers/'));
 
 // turn on connection to db and server
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: true }).then(() => {
   app.listen(PORT, () => console.log(`Now listening to https://localhost:${PORT}`));
 });
