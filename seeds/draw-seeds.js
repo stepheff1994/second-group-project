@@ -1,20 +1,26 @@
-const { Draw } = require('../models');
+const { Drawing } = require('../models');
 
 const drawdata = [
     {
-        title: 'Donec posuere metus vitae ipsum.',
-        drawing: ('../public/uploads/drawings/testdrawing1.png'),
-        user_id: 3
+
+        image: ('../public/uploads/drawings/testdrawing1.png'),
+        user_id: 3,
     },
     {
+<<<<<<< HEAD
         title: 'Morbi non quam nec dui luctus rutrum.',
         drawing: ('../public/uploads/drawings/testdrawing2.png'),
         user_id: 2
+=======
+
+        image: ('../public/uploads/drawings/testdrawing2.png'),
+        user_id: 8,
+>>>>>>> 34221deae9a36bec9da6f7f794f8024a8b030ce4
     },
     {
-        title: 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.',
-        drawing: ('../public/uploads/drawings/testdrawing3.png'),
-        user_id: 1
+
+        image: ('../public/uploads/drawings/testdrawing3.png'),
+        user_id: 1,
     }
 ];
 
