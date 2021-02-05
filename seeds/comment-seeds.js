@@ -8,7 +8,7 @@ const commentdata = [
     },
     {
         comment: "Random comment text from user",
-        user_id: 8,
+        user_id: 2,
         drawing_id: 2
     },
     {
