@@ -1,30 +1,30 @@
-const User = require('./User');
-// const Post = require('./Post');
-// const Comment = require('./Comment');
+// const User = require("./User");
+// const Drawing = require("./Drawing");
+const Comment = require('./Comment');
 
 //create associations
-// User.hasMany(Post, {
-//     foreignKey: 'user_id'
+// User.hasMany(Drawing, {
+//   foreignKey: "user_id",
 // });
 
-// Post.belongsTo(User, {
-//     foreignKey: 'user_id',
+// Drawing.belongsTo(User, {
+//   foreignKey: "user_id",
 // });
 
 // Comment.belongsTo(User, {
 //     foreignKey: 'user_id'
 //   });
-  
-// Comment.belongsTo(Post, {
-//     foreignKey: 'post_id'
+
+// Comment.belongsTo(Drawing, {
+//     foreignKey: 'drawing_id'
 // });
-  
+
 // User.hasMany(Comment, {
 //     foreignKey: 'user_id'
 // });
-  
-// Post.hasMany(Comment, {
-//     foreignKey: 'post_id'
+
+// Drawing.hasMany(Comment, {
+//     foreignKey: 'drawing_id'
 // });
 
-module.exports = {User};
+module.exports = { Comment };
