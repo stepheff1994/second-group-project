@@ -3,253 +3,253 @@ const { Comment } = require('../models');
 const commentdata = [
     {
         comment: "Random comment text from user",
-        // user_id: 6,
-        // post_id: 1
+        user_id: 6,
+        drawing_id: 1
     },
     {
         comment: "Random comment text from user",
-        // user_id: 6,
-        // post_id: 8
+        user_id: 6,
+        drawing_id: 8
     },
     {
         comment: "Random comment text from user",
-        // user_id: 3,
-        // post_id: 10
+        user_id: 3,
+        drawing_id: 10
     },
     {
         comment: "Random comment text from user",
-        // user_id: 3,
-        // post_id: 18
+        user_id: 3,
+        drawing_id: 18
     },
     {
         comment: "Random comment text from user",
-        // user_id: 7,
-        // post_id: 5
+        user_id: 7,
+        drawing_id: 5
     },
     {
         comment: "Random comment text from user",
-        // user_id: 1,
-        // post_id: 20
+        user_id: 1,
+        drawing_id: 20
     },
     {
         comment: "Random comment text from user",
-        // user_id: 6,
-        // post_id: 7
+        user_id: 6,
+        drawing_id: 7
     },
     {
         comment: "Random comment text from user",
-        // user_id: 7,
-        // post_id: 4
+        user_id: 7,
+        drawing_id: 4
     },
     {
         comment: "Random comment text from user",
-        // user_id: 6,
-        // post_id: 12
+        user_id: 6,
+        drawing_id: 12
     },
     {
         comment: "Random comment text from user",
-        // user_id: 6,
-        // post_id: 20
+        user_id: 6,
+        drawing_id: 20
     },
     {
         comment: "Random comment text from user",
-        // user_id: 3,
-        // post_id: 14
+        user_id: 3,
+        drawing_id: 14
     },
     {
         comment: "Random comment text from user",
-        // user_id: 5,
-        // post_id: 4
+        user_id: 5,
+        drawing_id: 4
     },
     {
         comment: "Random comment text from user",
-        // user_id: 4,
-        // post_id: 9
+        user_id: 4,
+        drawing_id: 9
     },
     {
         comment: "Random comment text from user",
-        // user_id: 5,
-        // post_id: 14
+        user_id: 5,
+        drawing_id: 14
     },
     {
         comment: "Random comment text from user",
-        // user_id: 6,
-        // post_id: 2
+        user_id: 6,
+        drawing_id: 2
     },
     {
         comment: "Random comment text from user",
-        // user_id: 8,
-        // post_id: 2
+        user_id: 8,
+        drawing_id: 2
     },
     {
         comment: "Random comment text from user",
-        // user_id: 2,
-        // post_id: 20
+        user_id: 2,
+        drawing_id: 20
     },
     {
         comment: "Random comment text from user",
-        // user_id: 4,
-        // post_id: 11
+        user_id: 4,
+        drawing_id: 11
     },
     {
         comment: "Random comment text from user",
-        // user_id: 5,
-        // post_id: 13
+        user_id: 5,
+        drawing_id: 13
     },
     {
         comment: "Random comment text from user",
-        // user_id: 9,
-        // post_id: 16
+        user_id: 9,
+        drawing_id: 16
     },
     {
         comment: "Random comment text from user",
-        // user_id: 6,
-        // post_id: 4
+        user_id: 6,
+        drawing_id: 4
     },
     {
         comment: "Random comment text from user",
-        // user_id: 4,
-        // post_id: 10
+        user_id: 4,
+        drawing_id: 10
     },
     {
         comment: "Random comment text from user",
-        // user_id: 3,
-        // post_id: 8
+        user_id: 3,
+        drawing_id: 8
     },
     {
         comment: "Random comment text from user",
-        // user_id: 8,
-        // post_id: 10
+        user_id: 8,
+        drawing_id: 10
     },
     {
         comment: "Random comment text from user",
-        // user_id: 1,
-        // post_id: 15
+        user_id: 1,
+        drawing_id: 15
     },
     {
         comment: "Random comment text from user",
-        // user_id: 5,
-        // post_id: 3
+        user_id: 5,
+        drawing_id: 3
     },
     {
         comment: "Random comment text from user",
-        // user_id: 1,
-        // post_id: 15
+        user_id: 1,
+        drawing_id: 15
     },
     {
         comment: "Random comment text from user",
-        // user_id: 4,
-        // post_id: 16
+        user_id: 4,
+        drawing_id: 16
     },
     {
         comment: "Random comment text from user",
-        // user_id: 4,
-        // post_id: 18
+        user_id: 4,
+        drawing_id: 18
     },
     {
         comment: "Random comment text from user",
-        // user_id: 4,
-        // post_id: 10
+        user_id: 4,
+        drawing_id: 10
     },
     {
         comment: "Random comment text from user",
-        // user_id: 7,
-        // post_id: 5
+        user_id: 7,
+        drawing_id: 5
     },
     {
         comment: "Random comment text from user",
-        // user_id: 10,
-        // post_id: 1
+        user_id: 10,
+        drawing_id: 1
     },
     {
         comment: "Random comment text from user",
-        // user_id: 3,
-        // post_id: 19
+        user_id: 3,
+        drawing_id: 19
     },
     {
         comment: "Random comment text from user",
-        // user_id: 5,
-        // post_id: 3
+        user_id: 5,
+        drawing_id: 3
     },
     {
         comment: "Random comment text from user",
-        // user_id: 10,
-        // post_id: 14
+        user_id: 10,
+        drawing_id: 14
     },
     {
         comment: "Random comment text from user",
-        // user_id: 10,
-        // post_id: 8
+        user_id: 10,
+        drawing_id: 8
     },
     {
         comment: "Random comment text from user",
-        // user_id: 10,
-        // post_id: 11
+        user_id: 10,
+        drawing_id: 11
     },
     {
         comment: "Random comment text from user",
-        // user_id: 8,
-        // post_id: 5
+        user_id: 8,
+        drawing_id: 5
     },
     {
         comment: "Random comment text from user",
-        // user_id: 8,
-        // post_id: 19
+        user_id: 8,
+        drawing_id: 19
     },
     {
         comment: "Random comment text from user",
-        // user_id: 9,
-        // post_id: 19
+        user_id: 9,
+        drawing_id: 19
     },
     {
         comment: "Random comment text from user",
-        // user_id: 5,
-        // post_id: 4
+        user_id: 5,
+        drawing_id: 4
     },
     {
         comment: "Random comment text from user",
-        // user_id: 2,
-        // post_id: 11
+        user_id: 2,
+        drawing_id: 11
     },
     {
         comment: "Random comment text from user",
-        // user_id: 4,
-        // post_id: 6
+        user_id: 4,
+        drawing_id: 6
     },
     {
         comment: "Random comment text from user",
-        // user_id: 9,
-        // post_id: 6
+        user_id: 9,
+        drawing_id: 6
     },
     {
         comment: "Random comment text from user",
-        // user_id: 7,
-        // post_id: 9
+        user_id: 7,
+        drawing_id: 9
     },
     {
         comment: "Random comment text from user",
-        // user_id: 4,
-        // post_id: 19
+        user_id: 4,
+        drawing_id: 19
     },
     {
         comment: "Random comment text from user",
-        // user_id: 10,
-        // post_id: 1
+        user_id: 10,
+        drawing_id: 1
     },
     {
         comment: "Random comment text from user",
-        // user_id: 2,
-        // post_id: 19
+        user_id: 2,
+        drawing_id: 19
     },
     {
         comment: "Random comment text from user",
-        // user_id: 10,
-        // post_id: 1
+        user_id: 10,
+        drawing_id: 1
     },
     {
         comment: "Random comment text from user",
-        // user_id: 10,
-        // post_id: 12
+        user_id: 10,
+        drawing_id: 12
     }
 ];
 
