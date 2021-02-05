@@ -9,13 +9,12 @@ router.get('/', (req, res) => {
         attributes: [
             'id',
             'image',
-            'title',
-            'created_at'
+            'user_id'
         ],
         include: [
             {
                 model: User,
-                attributes: ['username']
+                attributes: ['user_id']
             }
         ]
     })
@@ -34,13 +33,12 @@ router.get('/:id', (req, res) => {
         attributes: [
             'id',
             'image',
-            'title',
-            'created_at',
+            'user_id'
         ],
         include: [
             {
                 model: User,
-                attributes: ['username']
+                attributes: ['user_id']
             }
         ]
     })
@@ -59,7 +57,7 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
     Drawing.create({
-        title: req.body.title,
+        id: req.body.id,
         image: req.body.image,
         user_id: req.session.user_id
     })
@@ -73,7 +71,7 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
     Drawing.update(
         {
-            title: req.body.title
+            image: req.body.image
         },
         {
             where: {
