@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
-const drawRoutes = require('./draw-routes.js');
+const drawingRoutes = require('./drawing-routes.js');
 
-router.use('/draw', drawRoutes);
+router.use('/drawing', drawingRoutes);
 
 module.exports = router;

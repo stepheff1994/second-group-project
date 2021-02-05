@@ -1,14 +1,14 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Draw, User } = require('../../models');
+const { Drawing, User } = require('../../models');
 
 // get all users
 router.get('/', (req, res) => {
     console.log('======================');
-    Draw.findAll({
+    Drawing.findAll({
         attributes: [
             'id',
-            'drawing',
+            'image',
             'title',
             'created_at'
         ],
@@ -27,13 +27,13 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-    Post.findOne({
+    Drawing.findOne({
         where: {
             id: req.params.id
         },
         attributes: [
             'id',
-            'drawing',
+            'image',
             'title',
             'created_at',
         ],
@@ -58,9 +58,9 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    Draw.create({
+    Drawing.create({
         title: req.body.title,
-        drawing: req.body.drawing,
+        image: req.body.image,
         user_id: req.session.user_id
     })
         .then(dbDrawData => res.json(dbDrawData))
@@ -71,7 +71,7 @@ router.post('/', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-    Draw.update(
+    Drawing.update(
         {
             title: req.body.title
         },
@@ -96,7 +96,7 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     console.log('id', req.params.id);
-    Post.destroy({
+    Drawing.destroy({
         where: {
             id: req.params.id
         }
