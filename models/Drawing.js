@@ -2,9 +2,7 @@ const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
 
-class Drawing extends Model {
-  
-}
+class Drawing extends Model {}
 
 // define table columns and configuration
 Drawing.init(
