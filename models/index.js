@@ -1,36 +1,30 @@
-// import all models
-const Draw = require('./Draw');
-const User = require('./User');
+// const User = require("./User");
+// const Drawing = require("./Drawing");
 const Comment = require('./Comment');
 
-// create associations
-User.hasMany(Draw, {
-    foreignKey: 'user_id'
-});
+//create associations
+// User.hasMany(Drawing, {
+//   foreignKey: "user_id",
+// });
 
-Draw.belongsTo(User, {
-    foreignKey: 'user_id',
-    onDelete: 'SET NULL'
-});
+// Drawing.belongsTo(User, {
+//   foreignKey: "user_id",
+// });
 
+// Comment.belongsTo(User, {
+//     foreignKey: 'user_id'
+//   });
 
-Comment.belongsTo(User, {
-    foreignKey: 'user_id',
-    onDelete: 'SET NULL'
-});
+// Comment.belongsTo(Drawing, {
+//     foreignKey: 'drawing_id'
+// });
 
-Comment.belongsTo(Draw, {
-    foreignKey: 'draw_id',
-    onDelete: 'SET NULL'
-});
+// User.hasMany(Comment, {
+//     foreignKey: 'user_id'
+// });
 
-User.hasMany(Comment, {
-    foreignKey: 'user_id',
-    onDelete: 'SET NULL'
-});
+// Drawing.hasMany(Comment, {
+//     foreignKey: 'drawing_id'
+// });
 
-Draw.hasMany(Comment, {
-    foreignKey: 'draw_id'
-});
-
-module.exports = { User, Draw, Comment };
+module.exports = { Comment };
