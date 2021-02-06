@@ -16,7 +16,7 @@ Drawing.init(
     },
 
     image: {
-      type: DataTypes.STRING,
+      type: DataTypes.BLOB("long"),
       allowNull: false,
     },
 

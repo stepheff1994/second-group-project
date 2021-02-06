@@ -1,21 +1,23 @@
 const canvas = document.querySelector('#canvas');
 // Context for the canvas for 2 dimensional operations 
 const context = canvas.getContext('2d');
+// const uploadMiddleware = require('../middleware/upload.js');
+
 
 //best practice to wait for content of window element to load
 
 window.addEventListener('load', () => {
-    adjustSize();
+    // adjustSize();
     document.addEventListener('mousedown', startDrawing);
     document.addEventListener('mouseup', stopDrawing);
     document.addEventListener('mousemove', sketch);
-    window.addEventListener('adjustSize', adjustSize);
+    // window.addEventListener('adjustSize', adjustSize);
 });
 
-function adjustSize() {
+/* function adjustSize() {
     context.canvas.width = window.innerWidth;
     context.canvas.height = window.innerHeight;
-}
+} */
 
 //initial position of cursor
 let position = { x: 0, y: 0 };
@@ -40,12 +42,16 @@ function sketch(event) {
     context.beginPath();
     context.lineWidth = 4;
     context.lineCap = 'round';
-    context.strokeStyle = 'orange';
+    context.strokeStyle = 'skyblue';
     context.moveTo(position.x, position.y);
     currentPosition(event);
     context.lineTo(position.x, position.y);
     context.stroke();
 }
 
+function clearSketch() {
+    canvas.height = 200;
+}
 
-
+document.getElementById("clearCanvas").addEventListener("click", clearSketch);
+// document.getElementById("postCanvas").addEventListener("click", )
