@@ -9,56 +9,47 @@
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="./stylesheets/style.css">
 </head>
+<div class="wrapper">
+    <header>
+        <h1><a id="title" class="title-anim" href="/">Meural</a></h1>
+        <nav class="navbar mt-2">
+            {{#if loggedIn}}
+            <a href="/">homepage</a>
+            <a href="/dashboard">dashboard</a>
+            <a href="/dashboard/create/">draw image</a>
+            <button id="logout">logout</button>
+            {{else}}
+            <a href="/">homepage</a>
+            <a href="/login">login</a>
+            {{/if}}
+        </nav>
+    </header>
 
-<body>
-    <div>
-        <header>
-            <div>
-                <a id="title" class="title-anim" href="/">Meural</a>
-                <a href="#">Dashboard?</a>
-                <a href="#">Logout?</a>
-            </div>
-            <nav>
-                <form class="login-form">
-                    <div>
-                        <label for="email-login">Email:</label>
-                        <input type="text" id="email-login" />
-                    </div>
-                    <div>
-                        <label for="password-login">Password:</label>
-                        <input type="password" id="password-login" />
-                    </div>
-                    <div>
-                        <button type="submit">Login</button>
-                    </div>
-                </form>
-
-                <form class="signup-form">
-                    <div>
-                        <label for="username-signup">Username:</label>
-                        <input type="text" id="username-signup" />
-                    </div>
-                    <div>
-                        <label for="email-signup">Email:</label>
-                        <input type="text" id="email-signup" />
-                    </div>
-                    <div>
-                        <label for="password-signup">Password:</label>
-                        <input type="password" id="password-signup" />
-                    </div>
-                    <div>
-                        <button type="submit">Signup</button>
-                    </div>
-                </form>
-            </nav>
-        </header>
-        <main>
+    <main>
             {{{ body }}}
-        </main>
-        {{!-- <footer>
-            Thanks for dropping by!
-        </footer> --}}
-    </div>
+    </main>
+
+    <footer class="footer rows pb-2">
+        <div class="row-is-full content has-text-centered">
+            <p>
+            <a href="/">homepage</a>{{#if loggedIn}} | 
+            <a href="/dashboard">dashboard</a> | 
+              
+            {{else}}
+               
+             | <a href="/login">login</a>
+            {{/if}}
+            </p>
+        </div>
+      <div class="row-is-full content has-text-centered">
+    
+  </div>
+    </footer>
+  </div>
+
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
 </body>
 
 </html>
