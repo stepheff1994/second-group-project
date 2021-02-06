@@ -1,4 +1,4 @@
-const router = require('express').Router();
+gconst router = require('express').Router();
 const { User, Drawing, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
@@ -23,22 +23,6 @@ router.get('/:id', (req, res) => {
         where: {
           id: req.params.id
         },
-<<<<<<< HEAD
-        // include: [
-        //     {
-        //       model: Drawing,
-        //       attributes: ['id', 'img_title', 'post_content', 'created_at']
-        //     },
-        //     {
-        //         model: Comment,
-        //         attributes: ['id', 'comment_text', 'created_at'],
-        //         include: {
-        //           model: Post,
-        //           attributes: ['title']
-        //         }
-        //     }
-        //   ]
-=======
         include: [
             {
               model: Drawing,
@@ -53,7 +37,6 @@ router.get('/:id', (req, res) => {
                 }
             }
           ]
->>>>>>> 571ab9473290be00cc29f49bf82179f8f26d8ebc
 
     })
       .then(userData => {
