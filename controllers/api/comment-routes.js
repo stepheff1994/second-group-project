@@ -16,20 +16,17 @@ router.get("/", (req, res) => {
 router.post('/', withAuth, (req, res) => {
     // check the session
     if (req.session) {
-      Comment.create({
-        comment: req.body.comment,
-        user_id: req.body.user_id,
-        drawing_id: req.body.drawing_id,
-       
-        user_id: req.session.user_id
-      })
-        .then(dbCommentData => res.json(dbCommentData))
-        .catch(err => {
-          console.log(err);
-          res.status(400).json(err);
-        });
-    }
-  });
+        Comment.create({
+            comment: req.body.comment,
+            user_id: req.body.user_id,
+            drawing_id: req.body.drawing_id
+        }).then(commentData => res.json(commentData))
+            .catch(err => {
+                console.log(err);
+                res.status(400).json(err);
+            });
+    };
+});
 // delete a comment
 router.delete("/:id", withAuth, (req, res) => {
     Comment.destroy({
