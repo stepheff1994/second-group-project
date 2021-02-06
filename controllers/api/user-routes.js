@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Drawing, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
@@ -7,7 +7,7 @@ const withAuth = require('../../utils/auth');
 router.get('/', (req, res) => {
     // Access our User model and run .findAll() method
     User.findAll({
-        attributes: { include: ['password'] }
+        attributes: { exclude: ['password'] }
     })
       .then(userData => res.json(userData))
       .catch(err => {
@@ -23,20 +23,20 @@ router.get('/:id', (req, res) => {
         where: {
           id: req.params.id
         },
-        // include: [
-        //     {
-        //       model: Post,
-        //       attributes: ['id', 'img_title', 'post_content', 'created_at']
-        //     },
-        //     {
-        //         model: Comment,
-        //         attributes: ['id', 'comment_text', 'created_at'],
-        //         include: {
-        //           model: Post,
-        //           attributes: ['title']
-        //         }
-        //     }
-        //   ]
+        include: [
+            {
+              model: Drawing,
+              attributes: ['id', 'image', 'user_id']
+            },
+            {
+                model: Comment,
+                attributes: ['id', 'comment'],
+                include: {
+                  model: Drawing,
+                  attributes: ['id']
+                }
+            }
+          ]
 
     })
       .then(userData => {

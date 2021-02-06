@@ -4,17 +4,17 @@ const drawdata = [
     {
 
         image: ('../public/uploads/drawings/testdrawing1.png'),
-        user_id: 3,
+        user_id: 1,
     },
     {
 
         image: ('../public/uploads/drawings/testdrawing2.png'),
-        user_id: 8,
+        user_id: 2,
     },
     {
 
         image: ('../public/uploads/drawings/testdrawing3.png'),
-        user_id: 1,
+        user_id: 3,
     }
 ];
 

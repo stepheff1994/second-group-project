@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Drawing, User } = require('../../models');
-
+const { Drawing, User, Comment } = require('../../models');
 // get all users
 router.get('/', (req, res) => {
     console.log('======================');
@@ -15,6 +14,14 @@ router.get('/', (req, res) => {
             {
                 model: User,
                 attributes: ['username']
+            },
+            {
+                model: Comment,
+                attributes: ['id', 'comment'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
             }
         ]
     })
@@ -24,7 +31,6 @@ router.get('/', (req, res) => {
             res.status(500).json(err);
         });
 });
-
 router.get('/:id', (req, res) => {
     Drawing.findOne({
         where: {
@@ -38,7 +44,16 @@ router.get('/:id', (req, res) => {
         include: [
             {
                 model: User,
-                attributes: ['user_id']
+                attributes: ['username'],
+
+            },
+            {
+                model: Comment,
+                attributes: ['id', 'comment'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
             }
         ]
     })
@@ -54,7 +69,6 @@ router.get('/:id', (req, res) => {
             res.status(500).json(err);
         });
 });
-
 router.post('/', (req, res) => {
     Drawing.create({
         id: req.body.id,
@@ -67,7 +81,6 @@ router.post('/', (req, res) => {
             res.status(500).json(err);
         });
 });
-
 router.put('/:id', (req, res) => {
     Drawing.update(
         {
@@ -91,7 +104,6 @@ router.put('/:id', (req, res) => {
             res.status(500).json(err);
         });
 });
-
 router.delete('/:id', (req, res) => {
     console.log('id', req.params.id);
     Drawing.destroy({
@@ -111,5 +123,4 @@ router.delete('/:id', (req, res) => {
             res.status(500).json(err);
         });
 });
-
 module.exports = router;
