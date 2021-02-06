@@ -18,7 +18,7 @@ Drawing.init(
     },
 
     image: {
-      type: DataType.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
 
