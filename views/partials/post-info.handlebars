@@ -1,0 +1,11 @@
+<div class="col">
+    <div class="card h-100">
+        <img src="./uploads/drawings/testdrawing1.png" class="card-img-top" alt="...">
+        <div class="card-body badge bg-light">
+            <h5 class="card-title"><a href="/drawing/{{id}}">{{id}}</a>
+                <span>(by {{user.username}})</span>
+            </h5>
+            {{comments.length}} {{format_plural "comment" comments.length}}
+        </div>
+    </div>
+</div>
