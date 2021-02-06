@@ -13,12 +13,13 @@ router.get("/", (req, res) => {
 });
 
 // create a comment
-router.post("/", withAuth, (req, res) => {
+router.post('/', withAuth, (req, res) => {
+    // check the session
     if (req.session) {
         Comment.create({
             comment: req.body.comment,
             user_id: req.body.user_id,
-            post_id: req.body.post_id
+            drawing_id: req.body.drawing_id
         }).then(commentData => res.json(commentData))
             .catch(err => {
                 console.log(err);
