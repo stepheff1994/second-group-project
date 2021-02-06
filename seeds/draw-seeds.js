@@ -3,17 +3,17 @@ const { Drawing } = require('../models');
 const drawdata = [
     {
 
-        image: ('../public/uploads/drawings/testdrawing1.png'),
+        image: ('./uploads/drawings/testdrawing1.png'),
         user_id: 1,
     },
     {
 
-        image: ('../public/uploads/drawings/testdrawing2.png'),
+        image: ('./uploads/drawings/testdrawing2.png'),
         user_id: 2,
     },
     {
 
-        image: ('../public/uploads/drawings/testdrawing3.png'),
+        image: ('./uploads/drawings/testdrawing3.png'),
         user_id: 3,
     }
 ];
