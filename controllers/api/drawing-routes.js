@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Drawing, User } = require('../../models');
-/*
+
 // get all users
 router.get('/', (req, res) => {
     console.log('======================');
@@ -14,11 +14,11 @@ router.get('/', (req, res) => {
         include: [
             {
                 model: User,
-                attributes: ['user_id']
+                attributes: ['username']
             }
         ]
     })
-        .then(dbDrawData => res.json(dbDrawData))
+        .then(drawData => res.json(drawData))
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
@@ -42,12 +42,12 @@ router.get('/:id', (req, res) => {
             }
         ]
     })
-        .then(dbDrawData => {
-            if (!dbDrawData) {
+        .then(drawData => {
+            if (!drawData) {
                 res.status(404).json({ message: 'No post found with this id' });
                 return;
             }
-            res.json(dbDrawData);
+            res.json(drawData);
         })
         .catch(err => {
             console.log(err);
@@ -61,7 +61,7 @@ router.post('/', (req, res) => {
         image: req.body.image,
         user_id: req.session.user_id
     })
-        .then(dbDrawData => res.json(dbDrawData))
+        .then(drawData => res.json(drawData))
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
@@ -79,12 +79,12 @@ router.put('/:id', (req, res) => {
             }
         }
     )
-        .then(dbDrawData => {
-            if (!dbDrawData) {
+        .then(drawData => {
+            if (!drawData) {
                 res.status(404).json({ message: 'No post found with this id' });
                 return;
             }
-            res.json(dbDrawData);
+            res.json(drawData);
         })
         .catch(err => {
             console.log(err);
@@ -99,12 +99,12 @@ router.delete('/:id', (req, res) => {
             id: req.params.id
         }
     })
-        .then(dbDrawData => {
-            if (!dbDrawData) {
+        .then(drawData => {
+            if (!drawData) {
                 res.status(404).json({ message: 'No post found with this id' });
                 return;
             }
-            res.json(dbDrawData);
+            res.json(drawData);
         })
         .catch(err => {
             console.log(err);
@@ -112,4 +112,4 @@ router.delete('/:id', (req, res) => {
         });
 });
 
-module.exports = router; */
+module.exports = router;
