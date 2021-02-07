@@ -8,14 +8,12 @@
 </head>
 
 <body>
-    <form method="post" enctype="multipart/form-data">
-        <canvas id="canvas" width="200" height="200" style="border:1px solid"></canvas>
-        <br></br>
+    <canvas id="canvas" width="200" height="200" style="border:1px solid"></canvas>
 
-        <input type="submit" id="postCanvas" value="Post!">
-
-        <input type="button" id="clearCanvas" value="Clear!">
-
+    <button id="postCanvas">Submit Canvas</button>
+    <button id="clearCanvas">Clear Canvas</button>
+    <br></br>
+    <textarea id="draw_dataURL" rows="5"> Data URL for your signature will go here! </textarea>
     </form>
 
 

@@ -1,6 +1,6 @@
 (function () {
 
-    // Get a regular interval for drawing to the screen
+    // A regular interval to the screen for the animation to draw
     window.requestAnimFrame = (function (callback) {
         return window.requestAnimationFrame ||
             window.webkitRequestAnimationFrame ||
@@ -8,9 +8,9 @@
                 window.setTimeout(callback, 1000 / 1000);
             };
     })();
-
+    // context for the canvas 
     const canvas = document.querySelector('#canvas');
-    // Context for the canvas for 2 dimensional operations 
+
     const context = canvas.getContext('2d');
 
     const gradient = context.createLinearGradient(0, 0, 170, 0);
@@ -19,18 +19,20 @@
     gradient.addColorStop("1.0", "lightblue");
 
     context.strokeStyle = gradient;
-    context.lineWith = 2;
+    context.lineWidth = 2;
 
-    // Set up the UI
+    // adding the buttons in to clear and post
+    let drawData = document.getElementById("draw_dataURL");
     let clearBtn = document.getElementById("clearCanvas");
     let submitBtn = document.getElementById("postCanvas");
     clearBtn.addEventListener("click", function (event) {
         clearCanvas();
+        drawData.innerHTML = "Data URL for your drawing should be here...";
     }, false);
 
     submitBtn.addEventListener("click", function (event) {
         var dataUrl = canvas.toDataURL();
-        console.log(dataUrl);
+        drawData.innerHTML = dataUrl;
     }, false);
 
     // Set up mouse events for drawing
@@ -48,7 +50,7 @@
         mousePos = getMousePos(canvas, event);
     }, false);
 
-    // Set up touch events for mobile, etc
+    // Set up touch events for drawing
     document.addEventListener("touchstart", function (event) {
         mousePos = getTouchPos(canvas, event);
         var touch = event.touches[0];
@@ -98,7 +100,7 @@
             lastPos = mousePos;
         }
     }
-
+    // Clear the canvas and reset the brush properties, clearRect was not doing what I wanted it to do 
     function clearCanvas() {
         canvas.width = canvas.width;
         const gradient = context.createLinearGradient(0, 0, 170, 0);
