@@ -96,7 +96,7 @@ router.get('/:id', (req, res) => {
             const post = drawData.get({ plain: true });
 
             // pass data to template
-            res.render('single-post', {
+            res.render('single-drawing', {
                 post,
                 loggedIn: req.session.loggedIn
             });
