@@ -1,7 +1,9 @@
 const router = require('express').Router();
 const { Drawing, User, Comment } = require('../models');
-// get all users
-router.get('/', (req, res) => {
+
+
+// get all drawings
+router.get('/gallery', (req, res) => {
     console.log('======================');
     Drawing.findAll({
         attributes: [
@@ -29,7 +31,7 @@ router.get('/', (req, res) => {
             // console.log(drawData[0]);
             const posts = drawData.map(post => post.get({ plain: true }));
             // console.log(posts)
-            res.render('homepage', {
+            res.render('gallery', {
                 posts,
                 loggedIn: req.session.loggedIn
             });
