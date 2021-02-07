@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Drawing, User, Comment } = require('../../models');
+const { Drawing, User, Comment } = require('../models');
 // get all users
 router.get('/', (req, res) => {
     console.log('======================');
@@ -24,12 +24,39 @@ router.get('/', (req, res) => {
             }
         ]
     })
-        .then(drawData => res.json(drawData))
+        .then(drawData => {
+            // pass a single post object into the homepage template
+            // console.log(drawData[0]);
+            const posts = drawData.map(post => post.get({ plain: true }));
+            res.render('homepage', {
+                posts,
+                loggedIn: req.session.loggedIn
+            });
+        })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         });
 });
+
+router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+      res.redirect('/');
+      return;
+    }
+  
+    res.render('login');
+  });
+
+  router.get('/signup', (req, res) => {
+    if (req.session.loggedIn) {
+      res.redirect('/');
+      return;
+    }
+  
+    res.render('signup');
+  });
+
 router.get('/:id', (req, res) => {
     Drawing.findOne({
         where: {
@@ -61,62 +88,15 @@ router.get('/:id', (req, res) => {
                 res.status(404).json({ message: 'No post found with this id' });
                 return;
             }
-            res.json(drawData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
-router.post('/', (req, res) => {
-    Drawing.create({
-        id: req.body.id,
-        image: req.body.image,
-        user_id: req.body.user_id,
-        user_id: req.session.user_id
-    })
-        .then(drawData => res.json(drawData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
-router.put('/:id', (req, res) => {
-    Drawing.update(
-        {
-            image: req.body.image
-        },
-        {
-            where: {
-                id: req.params.id
-            }
-        }
-    )
-        .then(drawData => {
-            if (!drawData) {
-                res.status(404).json({ message: 'No post found with this id' });
-                return;
-            }
-            res.json(drawData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
-router.delete('/:id', (req, res) => {
-    console.log('id', req.params.id);
-    Drawing.destroy({
-        where: {
-            id: req.params.id
-        }
-    })
-        .then(drawData => {
-            if (!drawData) {
-                res.status(404).json({ message: 'No post found with this id' });
-                return;
-            }
-            res.json(drawData);
+
+            // serialize the data
+            const post = drawData.get({ plain: true });
+
+            // pass data to template
+            res.render('single-post', {
+                post,
+                loggedIn: req.session.loggedIn
+            });
         })
         .catch(err => {
             console.log(err);
