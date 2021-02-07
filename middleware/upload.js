@@ -1,7 +1,6 @@
 const multer = require("multer");
 
-
-var storage = multer.diskStorage({
+const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, __basedir + "/public/uploads/drawings");
     },
@@ -10,5 +9,13 @@ var storage = multer.diskStorage({
     },
 });
 
-var uploadFile = multer({ storage: storage });
+const fileFilter = (req, file, cb) => {
+    if (file.mimetype == 'image/jpeg' || file.mimetype == 'image/png') {
+        cb(null, true);
+    } else {
+        cb(null, false);
+    }
+}
+
+var uploadFile = multer({ storage: storage, fileFilter: fileFilter });
 module.exports = uploadFile;

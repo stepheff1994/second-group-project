@@ -3,6 +3,17 @@ const canvas = document.querySelector('#canvas');
 const context = canvas.getContext('2d');
 // const uploadMiddleware = require('../middleware/upload.js');
 
+
+//best practice to wait for content of window element to load
+
+window.addEventListener('load', () => {
+    // adjustSize();
+    document.addEventListener('mousedown', startDrawing);
+    document.addEventListener('mouseup', stopDrawing);
+    document.addEventListener('mousemove', sketch);
+    // window.addEventListener('adjustSize', adjustSize);
+});
+
 /* function adjustSize() {
     context.canvas.width = window.innerWidth;
     context.canvas.height = window.innerHeight;
@@ -42,26 +53,7 @@ function clearSketch() {
     canvas.height = 200;
 }
 
-//best practice to wait for content of window element to load
-
-window.addEventListener('load', () => {
-    // adjustSize();
-    document.addEventListener('mousedown', startDrawing);
-    document.addEventListener('mouseup', stopDrawing);
-    document.addEventListener('mousemove', sketch);
-    // window.addEventListener('adjustSize', adjustSize);
-});
-
-window.addEventListener("touchmove", function (e) {
-    var touch = e.touches[0];
-    var mouseEvent = new MouseEvent("mousemove", {
-        clientX: touch.clientX,
-        clientY: touch.clientY
-    });
-    canvas.dispatchEvent(mouseEvent);
-}, false);
-
-
+/* 
 async function submitToServer() {
     let imageBlob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
 
@@ -76,10 +68,8 @@ async function submitToServer() {
 
     // convert the response to json, modify it accordingly based on the returned response from your remote server
     let result = await response.json();
-}
+} */
 
 document.getElementById("clearCanvas").addEventListener("click", clearSketch);
 
-document.getElementById("postCanvas").addEventListener("click", submitToServer);
-
-
+// document.getElementById("postCanvas").addEventListener("click", submitToServer);
