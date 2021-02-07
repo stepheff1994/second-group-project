@@ -7,19 +7,17 @@
     <title>Meural</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="./stylesheets/style.css">
+    <link rel="stylesheet" href="./stylesheets/mainstyle.css">
 </head>
 <div class="wrapper">
     <header>
         <h1><a id="title" class="title-anim" href="/">Meural</a></h1>
         <nav class="navbar mt-2">
             {{#if loggedIn}}
-            <a href="/">Homepage</a>
             <a href="/dashboard">Dashboard</a>
             <a href="/dashboard/create/">draw image</a>
             <button id="logout">Logout</button>
             {{else}}
-            <a href="/">Homepage</a>
             <a href="/gallery">Gallery</a>
             <a href="/login">Login</a>
             {{/if}}
@@ -27,26 +25,42 @@
     </header>
 
     <main>
-            {{{ body }}}
+        {{!-- <section>
+            <div class="herobg"></div>
+            <div class="herobg-bg2"></div>
+            <div class="herobg-bg3"></div>
+            <div class="hero-form">
+                <h3>Log in</h3>
+                <form>
+                    <label for="name">Enter your username:</label>
+                    <input type="text" placeholder="Your Name" name="name" id="name" class="form-input">
+
+                    <label for="email">Enter your password:</label>
+                    <input type="text" placeholder="password" name="password" id="email" class="form-input">
+                </form>
+
+            </div>
+        </section> --}}
+        {{{body}}}
     </main>
 
     <footer class="footer rows pb-2">
         <div class="row-is-full content has-text-centered">
             <p>
-            <a href="/">Homepage</a>{{#if loggedIn}} | 
-            <a href="/dashboard">Dashboard</a> | 
-              
-            {{else}}
-               
-             | <a href="/login">Login</a>
-            {{/if}}
+                {{#if loggedIn}} |
+                <a href="/dashboard">Dashboard</a> |
+
+                {{else}}
+
+                | <a href="/login">Login</a>
+                {{/if}}
             </p>
         </div>
-      <div class="row-is-full content has-text-centered">
-    
-  </div>
+        <div class="row-is-full content has-text-centered">
+
+        </div>
     </footer>
-  </div>
+</div>
 
 {{#if loggedIn}}
 <script src="/javascript/logout.js"></script>
