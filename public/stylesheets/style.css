@@ -8,7 +8,7 @@ padding: 0;
 margin: 0;
 font-family: sans-serif;
 color: #333;
-background-color: #E1EFF6;
+background-color: #E7ECEF;
 }
 
 header {
@@ -17,7 +17,7 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 padding: 0 1%;
-background-color: #83BCFF;
+background-color: #6096BA;
 max-height: 280px;
 }
 #title {
@@ -70,7 +70,7 @@ display: block;
 
 a {
 text-decoration: none;
-color: #44FFD1;
+color: #274C77;
 font-weight: bold;
 transition: color .1s;
 margin-right: 30px;
@@ -78,7 +78,7 @@ font-size: 30px;
 }
 
 a:hover {
-color: #6dd6bc;
+color: #A3CEF1;
 }
 
 .login-form {
@@ -107,13 +107,24 @@ button:hover {
 background-color: #3a4655;
 }
 .title-anim {
-animation: 3s slideIn ease-in-out forwards 1s;
+animation: 1s slideIn ease-in-out forwards 1s;
+opacity: 0;
+position: relative;
+}
+.card-anim {
+animation: 3s slide ease-in-out forwards 1s;
 opacity: 0;
 position: relative;
 }
 
 @keyframes slideIn {
-100% {
-opacity: 1;
+    100% {
+    opacity: 1;
+    }
 }
+
+@keyframes slide {
+    100% {
+    opacity: 1;
+    }
 }
