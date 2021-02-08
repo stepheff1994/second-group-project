@@ -9,17 +9,19 @@ html {
   margin: 0;
   font-family: sans-serif;
   color: #333;
+  
+ 
+  
+  background: linear-gradient(270deg, #2bcaa2, #062c9e);
+    background-size: 400% 400%;
 
-  animation: slide 3s ease-in-out infinite alternate;
-  background-image: linear-gradient(
-    #6c3,
-    rgb(140, 0, 255),
-    blue
-  );
-  animation-direction: alternate-reverse;
-  animation-duration: 4s;
+    animation: AnimationName 20s ease infinite;
+  
+ 
   
 }
+
+
 footer {
   position: fixed;
   bottom: 0px;
@@ -152,17 +154,6 @@ a {
     text-align: center;
 }
 
-@keyframes slide {
-  0% {
-    transform: translateX(-25%);
-  }
-  50% {
-    transform: translateX(25%);
-  }
-  100% {
-    transform: translateX(-25%);
-  }
-}
 textarea:focus,
 input:focus {
   outline: none;
@@ -230,14 +221,8 @@ button:hover {
   position: relative;
 }
 
-@keyframes slideIn {
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes slide {
-  100% {
-    opacity: 1;
-  }
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
