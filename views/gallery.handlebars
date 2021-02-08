@@ -1,5 +1,7 @@
 <div class="row row-cols-1 row-cols-md-3 g-4">
   {{#each posts as |post|}}
-  {{> post-info post}}
+  {{> post-info post }}
+   
+   <button type="button" class="button is-danger delete-post-btn">delete post</button>
   {{/each}}
 </div>

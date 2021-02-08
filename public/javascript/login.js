@@ -1,8 +1,8 @@
 async function loginFormHandler(event) {
   event.preventDefault();
 
-  const email = document.querySelector('#email-login').value.trim();
-  const password = document.querySelector('#password-login').value.trim();
+  const email = document.querySelector('#name').value.trim();
+  const password = document.querySelector('#email').value.trim();
 
   if (email && password) {
     const response = await fetch('/api/users/login', {
@@ -22,4 +22,4 @@ async function loginFormHandler(event) {
   }
 }
 
-document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
+document.querySelector('.hero-form').addEventListener('submit', loginFormHandler);
