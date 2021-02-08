@@ -1,13 +1,4 @@
-/* (function () {
 
-    // A regular interval to the screen for the animation to draw
-    window.requestAnimationFrame = (function (callback) {
-        return window.requestAnimationFrame ||
-            window.webkitRequestAnimationFrame ||
-            function (callback) {
-                window.setTimeout(callback, 1000 / 1000);
-            };
-    })(); */
 // context for the canvas
 const canvas = document.querySelector('#canvas');
 
@@ -115,10 +106,3 @@ function clearCanvas() {
     context.lineWidth = 2;
 
 }
-
-/*  // Allow for animation
- (function drawLoop() {
-     requestAnimationFrame(drawLoop);
-     renderCanvas();
- })();
-})();  */

@@ -16,10 +16,11 @@
             {{#if loggedIn}}
             <a href="/">Homepage</a>
             <a href="/dashboard">Dashboard</a>
-            <a href="/dashboard/create/">draw image</a>
+            <a href="/draw">draw image</a>
             <button id="logout">Logout</button>
             {{else}}
             <a href="/">Homepage</a>
+            <a href="/draw">draw image</a>
             <a href="/gallery">Gallery</a>
             <a href="/login">Login</a>
             {{/if}}
@@ -27,26 +28,26 @@
     </header>
 
     <main>
-            {{{ body }}}
+        {{{ body }}}
     </main>
 
     <footer class="footer rows pb-2">
         <div class="row-is-full content has-text-centered">
             <p>
-            <a href="/">Homepage</a>{{#if loggedIn}} | 
-            <a href="/dashboard">Dashboard</a> | 
-              
-            {{else}}
-               
-             | <a href="/login">Login</a>
-            {{/if}}
+                <a href="/">Homepage</a>{{#if loggedIn}} |
+                <a href="/dashboard">Dashboard</a> |
+
+                {{else}}
+
+                | <a href="/login">Login</a>
+                {{/if}}
             </p>
         </div>
-      <div class="row-is-full content has-text-centered">
-    
-  </div>
+        <div class="row-is-full content has-text-centered">
+
+        </div>
     </footer>
-  </div>
+</div>
 
 {{#if loggedIn}}
 <script src="/javascript/logout.js"></script>
