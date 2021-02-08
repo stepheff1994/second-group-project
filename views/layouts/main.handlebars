@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<body> 
 
 <head>
     <meta charset="UTF-8">
@@ -19,29 +20,16 @@
             <button id="logout">Logout</button>
             {{else}}
             <a href="/gallery">Gallery</a>
-            <a href="/login">Login</a>
+            <a href="/login">Register</a>
             {{/if}}
         </nav>
     </header>
 
     <main>
-        {{!-- <section>
-            <div class="herobg"></div>
-            <div class="herobg-bg2"></div>
-            <div class="herobg-bg3"></div>
-            <div class="hero-form">
-                <h3>Log in</h3>
-                <form>
-                    <label for="name">Enter your username:</label>
-                    <input type="text" placeholder="Your Name" name="name" id="name" class="form-input">
-
-                    <label for="email">Enter your password:</label>
-                    <input type="text" placeholder="password" name="password" id="email" class="form-input">
-                </form>
-
-            </div>
-        </section> --}}
+        
         {{{body}}}
+        
+         
     </main>
 
     <footer class="footer rows pb-2">

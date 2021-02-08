@@ -13,7 +13,7 @@
   }
   header {
     padding: 20px 35px;
-    background-image: url("../../images/backgroundcanvas.jpg");
+    background-image: url("./../uploads/drawings/backgroundcanvas.jpg");
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -23,7 +23,7 @@
   footer {
     position: fixed;
     background-image: url("./../uploads/drawings/backgroundcanvas.jpg");
-    
+
   }
   
   header h1 {
