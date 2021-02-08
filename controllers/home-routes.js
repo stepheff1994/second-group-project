@@ -44,21 +44,25 @@ router.get('/gallery', (req, res) => {
 
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
-      res.redirect('/');
-      return;
+        res.redirect('/');
+        return;
     }
-  
-    res.render('login');
-  });
 
-  router.get('/signup', (req, res) => {
+    res.render('login');
+});
+
+router.get('/draw', (req, res) => {
+    res.render('draw');
+});
+
+router.get('/signup', (req, res) => {
     if (req.session.loggedIn) {
-      res.redirect('/');
-      return;
+        res.redirect('/');
+        return;
     }
-  
+
     res.render('signup');
-  });
+});
 
 router.get('/:id', (req, res) => {
     Drawing.findOne({
@@ -106,4 +110,6 @@ router.get('/:id', (req, res) => {
             res.status(500).json(err);
         });
 });
+
+
 module.exports = router;

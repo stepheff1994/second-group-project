@@ -1,6 +1,6 @@
 const { Drawing } = require('../models');
 
-const drawdata = [
+const drawData = [
     {
 
         image: ('./uploads/drawings/testdrawing1.png'),
@@ -18,6 +18,6 @@ const drawdata = [
     }
 ];
 
-const seedDraws = () => Drawing.bulkCreate(drawdata);
+const seedDraws = () => Drawing.bulkCreate(drawData);
 
 module.exports = seedDraws;
