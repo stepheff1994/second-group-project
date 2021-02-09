@@ -229,10 +229,22 @@ button:hover {
   align-items: center;
 }
 .card-anim {
-  animation: 3s slide ease-in-out forwards 1s;
+  animation: 1s slide ease-in-out forwards 1.5s;
   opacity: 0;
   position: relative;
 }
+
+/* div ul li .list-group-item{
+  animation: 1s commentSlide ease-in-out forwards 2s;
+  opacity: 0;
+  position: relative;
+}
+
+@keyframes commentSlide {
+  100% {
+    opacity: 1;
+  }
+} */
 
 @keyframes slideIn {
   100% {
