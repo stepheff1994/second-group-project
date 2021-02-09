@@ -4,7 +4,7 @@ const { Drawing, User, Comment } = require('../models');
 
 router.get('/', (req, res) => {
     if (req.session.loggedIn) {
-        res.redirect('/');
+        res.redirect('/gallery');
         return;
       }
     
@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 // the same page with errors
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
-      res.redirect('/');
+      res.redirect('/gallery');
       return;
     }
   
@@ -64,7 +64,7 @@ router.get('/gallery', (req, res) => {
 
   router.get('/signup', (req, res) => {
     if (req.session.loggedIn) {
-      res.redirect('/');
+      res.redirect('/gallery');
       return;
     }
   
