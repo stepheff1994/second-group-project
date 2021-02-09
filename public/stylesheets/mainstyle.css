@@ -9,16 +9,15 @@ html {
   margin: 0;
   font-family: sans-serif;
   color: #333;
-  
+  background-image: linear-gradient(
+    #6c3,
+    rgb(140, 0, 255),
+    blue
+  );
  
-  
-  background: linear-gradient(270deg, #2bcaa2, #062c9e);
-    background-size: 400% 400%;
-
-    animation: AnimationName 20s ease infinite;
-  
- 
-  
+}
+body .background{
+  animation: slidetwo 3s ease-in-out infinite alternate;
 }
 
 
@@ -35,13 +34,15 @@ footer {
 }
 
 header {
-   
-    padding-top: 0;
-    background-image: url("./../uploads/drawings/backgroundcanvas.jpg");
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    box-shadow: inset 0 0 5px 5px #888;
+  
+  padding-top: 0;
+  background-image: url("./../uploads/drawings/backgroundcanvas.jpg");
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-shadow: inset 0 0 5px 5px #888;
+  animation:background_anim 200s linear infinite;
+
 }
 div.wrapper {
     padding-top: 0;
@@ -154,6 +155,17 @@ a {
     text-align: center;
 }
 
+@keyframes slidetwo {
+  0% {
+    transform: translateX(-25%);
+  }
+  50% {
+    transform: translateX(25%);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
+}
 textarea:focus,
 input:focus {
   outline: none;
@@ -225,4 +237,10 @@ button:hover {
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
+}
+
+/* makes background move */
+@keyframes background_anim{
+  0%{background-position:0 0;}
+  100%{background-position:-2122px 0;}
 }
