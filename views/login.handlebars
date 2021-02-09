@@ -1,7 +1,7 @@
-{{!-- <div class="column">
+<div class="column">
   <h2 class="title pb-4">login:</h2>
   <hr>
-  <form class="login-form">
+  <form id="login-form">
     <div>
       <label for="email-login">email:</label>
       <input type="text" id="email-login" />
@@ -12,18 +12,18 @@
     </div>
     <div>
       <button type="submit">login</button>
-      <a href="/login"><button type="button" class="signUpButton">signup</button></a>
+      <a href="/signup"><button type="button" class="signUpButton">signup</button></a>
     </div>
   </form>
-</div> --}}
-
-<section>
+</div>
+<script src="/javascript/login.js"></script>
+{{!-- <section> --}}
   {{!-- <div class="herobg"></div>
   <div class="herobg-bg2"></div>
   <div class="herobg-bg3"></div> --}}
-  <div class="hero-form">
+  {{!-- <div class="hero-form">
     <h3>Log in</h3>
-    <form>
+    <form class="login-form">
       <label for="name">Enter your username:</label>
       <input type="text" placeholder="Your Name" name="name" id="name" class="form-input">
 
@@ -37,4 +37,4 @@
 </section>
 
 <!-- javascript file-->
-<script src="/javascript/login.js"></script>
+{{!-- <script src="/javascript/login.js"></script> --}} --}}

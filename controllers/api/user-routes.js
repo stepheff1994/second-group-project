@@ -95,7 +95,7 @@ router.post('/', (req, res) => {
         // declare session variables
         req.session.user_id = userData.id;
         req.session.username = userData.username;
-        req.session.password = userData.password;
+        //req.session.password = userData.password;
         req.session.loggedIn = true;
   
         res.json({ user: userData, message: 'You are now logged in!' });
