@@ -11,16 +11,16 @@ router.get('/main', (req, res) => {
       res.render('login');
 })
 
-// check if the username and password are right, then redirect and start sessions, else refresh 
-// the same page with errors
-router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-      res.redirect('/');
-      return;
-    }
+// // check if the username and password are right, then redirect and start sessions, else refresh 
+// // the same page with errors
+// router.get('/login', (req, res) => {
+//     if (req.session.loggedIn) {
+//       res.redirect('/');
+//       return;
+//     }
   
-    res.render('login');
-  });
+//     res.render('login');
+//   });
 
 // get all drawings
 // router.get('/main', (req, res) => {
@@ -62,14 +62,14 @@ router.get('/login', (req, res) => {
 //         });
 // });
 
-// router.get('/login', (req, res) => {
-//     if (req.session.loggedIn) {
-//       res.redirect('/');
-//       return;
-//     }
+router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+      res.redirect('/');
+      return;
+    }
   
-//     res.render('login');
-//   });
+    res.render('login');
+  });
 
   router.get('/signup', (req, res) => {
     if (req.session.loggedIn) {
