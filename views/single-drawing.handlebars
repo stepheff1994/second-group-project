@@ -1,5 +1,6 @@
-{{> post-info post}}
-
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  {{> post-info post}}
+</div>
 {{#if loggedIn}}
 <form class="comment-form">
   <div>
@@ -13,4 +14,3 @@
 {{/if}}
 
 {{> comments post.comments}}
-
