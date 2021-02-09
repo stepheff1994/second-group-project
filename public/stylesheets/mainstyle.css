@@ -225,6 +225,9 @@ button:hover {
   opacity: 0;
   position: relative;
 }
+.card{
+  align-items: center;
+}
 .card-anim {
   animation: 3s slide ease-in-out forwards 1s;
   opacity: 0;
