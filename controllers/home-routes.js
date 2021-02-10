@@ -2,25 +2,25 @@ const router = require('express').Router();
 const { Drawing, User, Comment } = require('../models');
 
 
-router.get('/', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/gallery');
-        return;
-      }
+// router.get('/', (req, res) => {
+//     if (req.session.loggedIn) {
+//         res.redirect('/gallery');
+//         return;
+//       }
     
-      res.render('login');
-})
+//       res.render('login');
+// })
 
-// check if the username and password are right, then redirect and start sessions, else refresh 
-// the same page with errors
-router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-      res.redirect('/gallery');
-      return;
-    }
+// // check if the username and password are right, then redirect and start sessions, else refresh 
+// // the same page with errors
+// router.get('/login', (req, res) => {
+//     if (req.session.loggedIn) {
+//       res.redirect('/gallery');
+//       return;
+//     }
   
-    res.render('login');
-  });
+//     res.render('login');
+//   });
 
 // get all drawings
 router.get('/', (req, res) => {
