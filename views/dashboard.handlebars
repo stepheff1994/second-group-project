@@ -1,0 +1,38 @@
+<section>
+    <h2>Create New Drawing</h2>
+    <form class="new-post-form">
+        <canvas id="canvas" width="200" height="200" style="border:1px solid"></canvas>
+
+
+        <button id="clearCanvas">Clear Canvas</button>
+        <button id="finishCanvas">Finish Canvas</button>
+        <br></br>
+        <input type="text" id="draw_dataURL" rows="5" name="draw_dataURL">
+        <button type="submit" id="postCanvas">Submit Canvas</button>
+
+
+        {{!-- <div>
+            <label for="drawing-title">Title</label>
+            <input type="text" id="drawing-title" name="drawing-title" />
+        </div> --}}
+
+</section>
+
+{{!--
+{{#if drawing.length}}
+<section>
+    <h2>Your drawings</h2>
+    <ol>
+        {{#each drawing as |drawing|}}
+        <li>
+            {{> post-info drawing}}
+            <a href="/dashboard/edit/{{drawing.id}}" class="edit-link">Edit Title</a>
+        </li>
+        {{/each}}
+    </ol>
+</section>
+{{/if}}
+--}}
+
+<script src="/javascript/canvas.js"></script>
+<script src="/javascript/add-drawing.js"></script>
