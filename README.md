@@ -4,7 +4,7 @@
 ## Description
 
 🔍 A Meural made using node.js, express.js, mySQL, Sequelize ORM and handlebars.js that allows users from little children to adults to draw an image and share with anyone.  
-![whiskey app](./assets/main-screenshot.PNG)
+
 
 ## User Story
 

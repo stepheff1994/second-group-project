@@ -68,17 +68,27 @@ router.get('/:id', (req, res) => {
             res.status(500).json(err);
         });
 });
-router.post('/', (req, res) => {
-    Drawing.create({
-        image: req.body.image,
-        user_id: req.session.user_id
-    })
-        .then(drawData => res.json(drawData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
+
+router.post('/', (request, response) => {
+   image = request.body.image;
+    
+    const timestamp = Date.now();
+    data.timestamp = timestamp;
+    database.insert(data);
+    response.json(data);
+  });
+
+// router.post('/', (req, res) => {
+//     Drawing.create({
+//         image: req.body.image,
+//         user_id: req.session.user_id
+//     })
+//         .then(drawData => res.json(drawData))
+//         .catch(err => {
+//             console.log(err);
+//             res.status(500).json(err);
+//         });
+// });
 router.put('/:id', (req, res) => {
     Drawing.update(
         {

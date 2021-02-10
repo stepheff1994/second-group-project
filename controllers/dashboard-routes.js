@@ -41,6 +41,8 @@ router.get('/', (req, res) => {
     });
 });
 
+
+
 /* router.get('/edit/:id', withAuth, (req, res) => {
   Drawing.findByPk(req.params.id, {
     attributes: [

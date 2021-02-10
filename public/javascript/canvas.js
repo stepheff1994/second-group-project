@@ -30,34 +30,29 @@
         drawData.innerHTML = "Capture the dataURL";
     }, false);
 
-    async function newFormHandler(event) {
-        event.preventDefault();
+    // async function newFormHandler(event) {
+    //     event.preventDefault();
 
-        // const draw_title = document.querySelector('input[name="drawing-title"]').value;
-        const image = document.querySelector('input[name="draw_DataURL"]').value;
+    //     // const draw_title = document.querySelector('input[name="drawing-title"]').value;
+    //     const image = document.querySelector('input[name="draw_DataURL"]').value;
+         
+    //     const response = await fetch(`/api/drawing`, {
+    //         method: 'POST',
+    //         body: JSON.stringify({
+    //             image
+    //         }),
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         }
+    //     });
 
-        const response = await fetch(`/api/drawing`, {
-            method: 'POST',
-            body: JSON.stringify({
-                image
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
-
-        if (response.ok) {
-            document.location.replace('/dashboard');
-        } else {
-            alert(response.statusText);
-        }
-    }
-    submitBtn.addEventListener("click", function (event) {
-        let dataUrl = canvas.toDataURL();
-        drawData.innerHTML = dataUrl;
-        newFormHandler();
-        clearCanvas();
-    }, false);
+    //     if (response.ok) {
+    //         document.location.replace('/dashboard');
+    //     } else {
+    //         alert(response.statusText);
+    //     }
+    // }
+    
 
     // Set up mouse events for drawing
     let drawing = false;
@@ -150,4 +145,47 @@
     })();
 })();
 
+//submitBtn.addEventListener("click", function (event) {
+    const button = document.getElementById('postCanvas');
+    button.addEventListener('click', async event => {
+    const mood = document.getElementById('mood').value;
+  //video.loadPixels();
+   const image64 = canvas.toDataURL();
+   const data = { image64 };
+   const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  };
+const response = await fetch('/api', options);
+const json = await response.json();
+console.log(json);
 
+});
+getData()
+
+//newFormHandler();
+//     clearCanvas();
+// }, false);
+async function getData() {
+    const response = await fetch('/drawing');
+    const data = await response.json();
+  
+    for (item of data) {
+      
+      const image = document.createElement('img');
+  
+      mood.textContent = `mood: ${item.mood}`;
+     // geo.textContent = `${item.lat}°, ${item.lon}°`;
+      //const dateString = new Date(item.timestamp).toLocaleString();
+      date.textContent = dateString;
+      image.src = item.image64;
+      
+  
+      root.append(mood, geo, date, image);
+      document.body.append(root);
+    }
+    console.log(data);
+  }
