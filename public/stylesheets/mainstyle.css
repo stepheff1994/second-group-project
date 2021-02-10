@@ -18,7 +18,7 @@ html {
 }
 
 footer {
-  position: fixed;
+  position: sticky;
   bottom: 0px;
   padding-bottom: 1.5%;
   background-image: url("/uploads/drawings/backgroundcanvas.jpg");
