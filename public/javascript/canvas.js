@@ -24,39 +24,15 @@
     // adding the buttons in to clear and post
     let drawData = document.getElementById("draw_dataURL");
     let clearBtn = document.getElementById("clearCanvas");
-    let submitBtn = document.getElementById("postCanvas")
+    let submitBtn = document.getElementById("postCanvas");
     clearBtn.addEventListener("click", function (event) {
         clearCanvas();
-        drawData.innerHTML = "Capture the dataURL";
     }, false);
 
     submitBtn.addEventListener("click", function (event) {
         let dataUrl = canvas.toDataURL();
         drawData.innerHTML = dataUrl;
-        async function newFormHandler(event) {
-            event.preventDefault();
-
-            // const draw_title = document.querySelector('input[name="drawing-title"]').value;
-            const image = document.querySelector('input[name="draw_DataURL"]').value;
-
-            const response = await fetch(`/api/drawing`, {
-                method: 'POST',
-                body: JSON.stringify({
-                    user_id,
-                    image
-                }),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
-
-            if (response.ok) {
-                document.location.replace('/dashboard');
-            } else {
-                alert(response.statusText);
-            }
-        }
-        newFormHandler();
+        drawDataImage.setAttribute("src", dataUrl);
         clearCanvas();
     }, false);
 
@@ -150,5 +126,3 @@
         drawCanvas();
     })();
 })();
-
-
