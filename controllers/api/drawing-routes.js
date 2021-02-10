@@ -70,9 +70,7 @@ router.get('/:id', (req, res) => {
 });
 router.post('/', (req, res) => {
     Drawing.create({
-        id: req.body.id,
         image: req.body.image,
-        user_id: req.body.user_id,
         user_id: req.session.user_id
     })
         .then(drawData => res.json(drawData))
