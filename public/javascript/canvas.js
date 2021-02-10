@@ -24,6 +24,7 @@
     // adding the buttons in to clear and post
     let drawData = document.getElementById("draw_dataURL");
     let clearBtn = document.getElementById("clearCanvas");
+    let submitBtn = document.getElementById("postCanvas")
     clearBtn.addEventListener("click", function (event) {
         clearCanvas();
         drawData.innerHTML = "Capture the dataURL";

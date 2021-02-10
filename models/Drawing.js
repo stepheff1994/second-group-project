@@ -15,7 +15,7 @@ Drawing.init(
       autoIncrement: true,
     },
     image: {
-      type: DataTypes.STRING(length = 10000),
+      type: DataTypes.TEXT,
       allowNull: false,
     },
 

@@ -5,40 +5,40 @@ const withAuth = require('../utils/auth');
 
 // get all posts for dashboard
 router.get('/', (req, res) => {
-    console.log(req.session);
-    console.log('======================');
-    Drawing.findAll({
-        where: {
-            user_id: req.session.user_id
-        },
-        attributes: [
-            'id',
-            'image',
-            'created_at'
-        ],
-        include: [
-            {
-                model: Comment,
-                attributes: ['id', 'comment', 'drawing_id', 'user_id', 'created_at'],
-                include: {
-                    model: User,
-                    attributes: ['username']
-                }
-            },
-            {
-                model: User,
-                attributes: ['username']
-            }
-        ]
+  console.log(req.session);
+  console.log('======================');
+  Drawing.findAll({
+    where: {
+      user_id: req.session.user_id
+    },
+    attributes: [
+      'id',
+      'image',
+      // 'created_at'
+    ],
+    include: [
+      {
+        model: Comment,
+        attributes: ['id', 'comment', 'drawing_id', 'user_id'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
+      },
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
+  })
+    .then(DrawData => {
+      const allDrawings = DrawData.map(post => post.get({ plain: true }));
+      res.render('dashboard', { allDrawings, loggedIn: true });
     })
-        .then(dbDrawData => {
-            const allDrawings = dbDrawData.map(post => post.get({ plain: true }));
-            res.render('dashboard', { allDrawings, loggedIn: true });
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 /* router.get('/edit/:id', withAuth, (req, res) => {
