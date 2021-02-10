@@ -1,8 +1,8 @@
 async function newFormHandler(event) {
     event.preventDefault();
 
-    // const title = document.querySelector('input[name="drawing-title"]').value;
-    const draw_DataURL = document.querySelector('input[name="draw_DataURL"]').value;
+    // const draw_title = document.querySelector('input[name="drawing-title"]').value;
+    const image = document.querySelector('input[name="draw_DataURL"]').value;
 
     const response = await fetch(`/api/drawing`, {
         method: 'POST',
