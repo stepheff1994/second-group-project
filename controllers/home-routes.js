@@ -61,7 +61,7 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
-router.get('/:id', (req, res) => {
+router.get('/drawing/:id', (req, res) => {
     Drawing.findOne({
         where: {
             id: req.params.id
@@ -97,7 +97,7 @@ router.get('/:id', (req, res) => {
             const post = drawData.get({ plain: true });
             console.log(post)
             // pass data to template
-            res.render('single-post', {
+            res.render('single-drawing', {
                 post,
                 loggedIn: req.session.loggedIn
             });
