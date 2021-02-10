@@ -18,13 +18,15 @@ router.post('/', withAuth, (req, res) => {
     if (req.session) {
         Comment.create({
             comment: req.body.comment,
-            user_id: req.body.user_id,
+            user_id: req.session.user_id,
             drawing_id: req.body.drawing_id
+
         }).then(commentData => res.json(commentData))
             .catch(err => {
                 console.log(err);
                 res.status(400).json(err);
             });
+        console.log(req.body)
     };
 });
 // delete a comment
