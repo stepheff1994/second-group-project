@@ -2,28 +2,8 @@ const router = require('express').Router();
 const { Drawing, User, Comment } = require('../models');
 
 
-router.get('/', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/');
-        return;
-      }
-    
-      res.render('login');
-})
-
-// check if the username and password are right, then redirect and start sessions, else refresh 
-// the same page with errors
-router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-      res.redirect('/');
-      return;
-    }
-  
-    res.render('login');
-  });
-
 // get all drawings
-router.get('/gallery', (req, res) => {
+router.get('/', (req, res) => {
     console.log('======================');
     Drawing.findAll({
         attributes: [
@@ -62,14 +42,24 @@ router.get('/gallery', (req, res) => {
         });
 });
 
-  router.get('/signup', (req, res) => {
+// check if the username and password are right, then redirect and start sessions, else refresh 
+// the same page with errors
+router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
-      res.redirect('/');
-      return;
+        res.redirect('/');
+        return;
     }
-  
+
+    res.render('login');
+});
+
+router.get('/signup', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
     res.render('signup');
-  });
+});
 
 router.get('/drawing/:id', (req, res) => {
     Drawing.findOne({
@@ -99,13 +89,13 @@ router.get('/drawing/:id', (req, res) => {
     })
         .then(drawData => {
             if (!drawData) {
-                res.status(404).json({ message: 'No post found with this id' });
+                res.status(404).json({ message: 'No id' });
                 return;
             }
 
             // serialize the data
             const post = drawData.get({ plain: true });
-                console.log(post)
+            console.log(post)
             // pass data to template
             res.render('single-drawing', {
                 post,

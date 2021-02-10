@@ -22,10 +22,9 @@ body .background{
 
 
 footer {
-  position: fixed;
   bottom: 0px;
   padding-bottom: 1.5%;
-  background-image: url("./../uploads/drawings/backgroundcanvas.jpg");
+  background-image: url("/uploads/drawings/backgroundcanvas.jpg");
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -36,7 +35,7 @@ footer {
 header {
   
   padding-top: 0;
-  background-image: url("./../uploads/drawings/backgroundcanvas.jpg");
+  background-image: url("/uploads/drawings/backgroundcanvas.jpg");
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -44,10 +43,7 @@ header {
   animation:background_anim 200s linear infinite;
 
 }
-div.wrapper {
-    padding-top: 0;
-    justify-content: space-between;
-}
+
 #title {
   font-size: 50px;
 }
@@ -74,41 +70,16 @@ input {
 }
 
 textarea {
-  min-width: 40%;
-  min-height: 100px;
+  min-width: 30%;
+  min-height: 30%;
 }
 
 form label {
   display: block;
 }
 
-.herobg {
-  animation: slide 3s ease-in-out infinite alternate;
-  background-image: linear-gradient(
-    -60deg,
-    #6c3 50%,
-    rgb(140, 0, 255) 50%,
-    rgb(162, 0, 255) 50%
-  );
-  bottom: 0;
-  left: -50%;
-  opacity: 0.5;
-  position: fixed;
-  right: -50%;
-  top: 0;
-  z-index: -1;
-}
-.herobg-bg2 {
-  animation-direction: alternate-reverse;
-  animation-duration: 4s;
-}
-
-.herobg-bg3 {
-  animation-duration: 5s;
-}
-
 .hero-form {
-    background-image: url("./../uploads/drawings/backgroundcanvas.jpg");
+    background-image: url("/uploads/drawings/backgroundcanvas.jpg");
   border-radius: 0.25em;
   box-shadow: inset 0 0 5px 5px #888;
   box-sizing: border-box;
@@ -155,17 +126,6 @@ a {
     text-align: center;
 }
 
-@keyframes slidetwo {
-  0% {
-    transform: translateX(-25%);
-  }
-  50% {
-    transform: translateX(25%);
-  }
-  100% {
-    transform: translateX(-25%);
-  }
-}
 textarea:focus,
 input:focus {
   outline: none;
@@ -174,10 +134,6 @@ input:focus {
 
 form > div {
   margin-bottom: 2%;
-}
-
-form label {
-  display: block;
 }
 
 a {
@@ -196,7 +152,7 @@ a:hover {
 .login-form {
   box-shadow: inset 0 0 5px 5px #888;
   border: 3px solid #024e76;
-  background-image: url("../uploads/drawings/backgroundcanvas.jpg");
+  background-image: url("/uploads/drawings/backgroundcanvas.jpg");
   padding: 20px;
   color: #024e76;
   width: 40%;
@@ -227,16 +183,35 @@ button:hover {
   opacity: 0;
   position: relative;
 }
+
 .card-anim {
-  animation: 3s slide ease-in-out forwards 1s;
+  animation: 500ms slide ease-in-out forwards 1.5s;
   opacity: 0;
   position: relative;
 }
 
-@keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+.comment-anim{
+  animation: 1s commentSlide ease-in-out forwards 2s;
+  opacity: 0;
+  position: relative;
+}
+
+@keyframes commentSlide {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide {
+  100% {
+    opacity: 1;
+  }
 }
 
 /* makes background move */
