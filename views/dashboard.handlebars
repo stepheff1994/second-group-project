@@ -1,0 +1,41 @@
+<section>
+    <h2>Create New Drawing</h2>
+    <form class="new-post-form">
+        <canvas id="canvas" width="200" height="200" style="border:1px solid"></canvas>
+
+
+        <button id="clearCanvas">Clear Canvas</button>
+        <br></br>
+        <input display="hidden" type="text" id="draw_dataURL" rows="5" name="draw_dataURL"> </textarea>
+        <button type="submit" id="postCanvas">Submit Canvas</button>
+
+
+        {{!-- <div>
+            <label for="post-title">Title</label>
+            <input type="text" id="post-title" name="post-title" />
+        </div>
+        <div>
+            <label for="post-url">Link</label>
+            <input id="post-url" name="post-url" />
+        </div>
+        <button type="submit" class="btn">Create</button> --}}
+
+</section>
+
+{{!--
+{{#if posts.length}}
+<section>
+    <h2>Your drawings</h2>
+    <ol>
+        {{#each posts as |post|}}
+        <li>
+            {{> post-info post}}
+            <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+        </li>
+        {{/each}}
+    </ol>
+</section>
+{{/if}}
+--}}
+<script src="/javascript/add-post.js"></script>
+<script src="/javascript/canvas.js"></script>
