@@ -27,7 +27,6 @@
     let submitBtn = document.getElementById("postCanvas");
     clearBtn.addEventListener("click", function (event) {
         clearCanvas();
-        drawData.innerHTML = "Capture the dataURL";
     }, false);
 
     submitBtn.addEventListener("click", function (event) {
