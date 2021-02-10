@@ -17,8 +17,12 @@ html {
  
 }
 
+<<<<<<< HEAD
 /* footer {
   position: sticky;
+=======
+footer {
+>>>>>>> 7bfae4aa48ef2dc7140eb1d67f6915718f27f595
   bottom: 0px;
   padding-bottom: 1.5%;
   background-image: url("/uploads/drawings/backgroundcanvas.jpg");
