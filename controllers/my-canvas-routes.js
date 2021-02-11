@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const { Drawing, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
-// get all posts for dashboard
+// get all posts for my-canvas
 router.get('/', (req, res) => {
   console.log(req.session);
   console.log('======================');
@@ -14,6 +14,7 @@ router.get('/', (req, res) => {
     attributes: [
       'id',
       'image',
+      'title'
       // 'created_at'
     ],
     include: [
@@ -33,7 +34,7 @@ router.get('/', (req, res) => {
   })
     .then(DrawData => {
       const allDrawings = DrawData.map(post => post.get({ plain: true }));
-      res.render('dashboard', { allDrawings, loggedIn: true });
+      res.render('my-canvas', { allDrawings, loggedIn: true });
     })
     .catch(err => {
       console.log(err);
@@ -41,13 +42,14 @@ router.get('/', (req, res) => {
     });
 });
 
-/* router.get('/edit/:id', withAuth, (req, res) => {
+router.get('/edit/:id', withAuth, (req, res) => {
   Drawing.findByPk(req.params.id, {
     attributes: [
       'id',
       'image',
+      'title',
       'user_id',
-      'created_at'
+      // 'created_at'
     ],
     include: [
       {
@@ -67,8 +69,8 @@ router.get('/', (req, res) => {
     .then(dbDrawData => {
       if (dbDrawData) {
         const post = dbDrawData.get({ plain: true });
-        
-        res.render('edit-drawing', {
+
+        res.render('edit-title', {
           post,
           loggedIn: true
         });
@@ -79,6 +81,6 @@ router.get('/', (req, res) => {
     .catch(err => {
       res.status(500).json(err);
     });
-}); */
+});
 
 module.exports = router;

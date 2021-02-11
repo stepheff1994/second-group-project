@@ -7,6 +7,7 @@ router.get('/', (req, res) => {
         attributes: [
             'id',
             'image',
+            'title',
             'user_id'
         ],
         include: [
@@ -38,6 +39,7 @@ router.get('/:id', (req, res) => {
         attributes: [
             'id',
             'image',
+            'title',
             'user_id'
         ],
         include: [
@@ -71,6 +73,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     Drawing.create({
         image: req.body.image,
+        title: req.body.title,
         user_id: req.session.user_id
     })
         .then(drawData => res.json(drawData))
@@ -82,7 +85,7 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
     Drawing.update(
         {
-            image: req.body.image
+            title: req.body.title
         },
         {
             where: {

@@ -16,12 +16,9 @@ async function newFormHandler(event) {
     });
 
     if (response.ok) {
-        document.location.replace('/dashboard');
+        document.location.replace('/my-canvas');
     } else {
         alert(response.statusText);
     }
-    clearCanvas();
-}
 
-
-document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
+    document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);

@@ -22,17 +22,10 @@
     context.lineWidth = 4;
 
     // adding the buttons in to clear and post
-    let drawData = document.getElementById("draw_dataURL");
-    let clearBtn = document.getElementById("clearCanvas");
-    let submitBtn = document.getElementById("postCanvas");
-    clearBtn.addEventListener("click", function (event) {
-        clearCanvas();
-    }, false);
 
-    submitBtn.addEventListener("click", function (event) {
-        let dataUrl = canvas.toDataURL();
-        drawData.innerHTML = dataUrl;
-        drawDataImage.setAttribute("src", dataUrl);
+    let clearBtn = document.getElementById("clearCanvas");
+
+    clearBtn.addEventListener("click", function (event) {
         clearCanvas();
     }, false);
 

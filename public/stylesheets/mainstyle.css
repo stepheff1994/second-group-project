@@ -2,19 +2,15 @@
   box-sizing: border-box;
 }
 
-body,
-html {
+body, html {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: sans-serif;
-  color: #333;
-  background-image: linear-gradient(
-    #6c3,
-    rgb(140, 0, 255),
-    blue
-  );
- 
+  font-family: 'Permanent Marker', cursive;
+  color: #760270;
+  background: linear-gradient(270deg, #2bcaa2, #062c9e, purple);
+  background-size: 400% 400%;
+  animation: background_anim 1000s linear infinite;
 }
 
 footer {
@@ -26,23 +22,30 @@ footer {
   flex-wrap: wrap;
   box-shadow: inset 0 0 5px 5px #888;
   width: 100%;
+  font-family: 'Permanent Marker', cursive;
+}
+
+main {
+  flex: 1;
+  padding: 2% 4%;
 }
 
 header {
-  
   padding-top: 0;
   background-image: url("/uploads/drawings/backgroundcanvas.jpg");
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   box-shadow: inset 0 0 5px 5px #888;
-  animation:background_anim 200s linear infinite;
-
+  animation: background_anim 200s linear infinite;
 }
 
 #title {
   font-size: 50px;
+  color: #760270;
+  font-family: 'Permanent Marker', cursive;
 }
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -50,6 +53,7 @@ nav {
   padding: 1.5px;
   margin: 20px 0;
 }
+
 input {
   padding: 0.5%;
   border-radius: 5px;
@@ -58,11 +62,11 @@ input {
   min-height: 40px;
 }
 
-textarea,
-input {
+textarea, input {
   padding: 0.5%;
   border-radius: 5px;
   border: 1px solid #ccc;
+  font-family: 'Permanent Marker', cursive;
 }
 
 textarea {
@@ -72,10 +76,11 @@ textarea {
 
 form label {
   display: block;
+  font-family: 'Permanent Marker', cursive;
 }
 
 .hero-form {
-    background-image: url("/uploads/drawings/backgroundcanvas.jpg");
+  background-image: url("/uploads/drawings/backgroundcanvas.jpg");
   border-radius: 0.25em;
   box-shadow: inset 0 0 5px 5px #888;
   box-sizing: border-box;
@@ -85,64 +90,78 @@ form label {
   text-align: center;
   top: 50%;
   transform: translate(-50%, -50%);
+  font-family: 'Permanent Marker', cursive;
+  color: #760270;
 }
+
 .hero-form h3 {
   font-size: 24px;
   margin: 0;
 }
+
 .hero-form p {
   margin: 5px 0 15px 0;
 }
+
 .form-input {
   border: 1px solid #024e76;
   display: block;
   padding: 7px 15px;
   font-size: 16px;
-  color: rgb(162, 0, 255);
+  color: #760270;
   width: 100%;
   margin-bottom: 15px;
 }
+
 .hero-form label {
   margin: 0 5px;
 }
+
 .hero-form button {
-  color: rgb(162, 0, 255);
+  color: #760270;
   background-color: #024e76;
   border: none;
   padding: 5px 15px;
   display: inline;
   font-size: 16px;
-  text-align:justify;
+  text-align: justify;
   justify-content: space-between;
-}
-a {
-    text-align: center;
-}
-.signUpButton {
-    text-align: center;
+  font-family: 'Permanent Marker', cursive;
 }
 
-textarea:focus,
-input:focus {
+a {
+  text-align: center;
+}
+
+.signUpButton {
+  text-align: center;
+}
+
+textarea:focus, input:focus {
   outline: none;
   border: 1px solid #3486eb;
 }
 
-form > div {
+form>div {
   margin-bottom: 2%;
 }
 
 a {
   text-decoration: none;
-  color: #274c77;
+  color: #760270;
   font-weight: bold;
   transition: color 0.1s;
   margin-right: 30px;
   font-size: 30px;
+  font-family: 'Permanent Marker', cursive;
 }
 
 a:hover {
   color: #a3cef1;
+}
+
+.pb-4 {
+  color: black
 }
 
 .login-form {
@@ -150,16 +169,20 @@ a:hover {
   border: 3px solid #024e76;
   background-image: url("/uploads/drawings/backgroundcanvas.jpg");
   padding: 20px;
-  color: #024e76;
+  color: #760270;
   width: 40%;
   margin: 3.5%;
   box-shadow: inset 0 0 5px 5px;
+  font-family: 'Permanent Marker', cursive;
 }
+
 .signup-form {
   width: 100%;
   padding: 0.75rem;
   font-size: 1.2rem;
   border-radius: 0.3rem;
+  font-family: 'Permanent Marker', cursive;
+  color: black
 }
 
 button {
@@ -174,6 +197,7 @@ button {
 button:hover {
   background-color: #3a4655;
 }
+
 .title-anim {
   animation: 1s slideIn ease-in-out forwards 1s;
   opacity: 0;
@@ -186,10 +210,14 @@ button:hover {
   position: relative;
 }
 
-.comment-anim{
+.comment-anim {
   animation: 1s commentSlide ease-in-out forwards 2s;
   opacity: 0;
   position: relative;
+}
+
+.hide {
+  visibility: hidden;
 }
 
 @keyframes commentSlide {
@@ -211,7 +239,12 @@ button:hover {
 }
 
 /* makes background move */
-@keyframes background_anim{
-  0%{background-position:0 0;}
-  100%{background-position:-2122px 0;}
+
+@keyframes background_anim {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -2122px 0;
+  }
 }

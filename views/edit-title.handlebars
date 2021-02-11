@@ -1,0 +1,34 @@
+<article>
+    <a href="/my-canvas"> &larr; Back to My Canvas</a>
+    <h2>
+        Edit Title
+    </h2>
+    <form class="edit-drawing-form">
+        <div>
+            <input name="edit-drawing-title" type="text" value="{{drawing.title}}" />
+        </div>
+        <img src={{ drawing.image }}>
+        <div>
+            <a href="/drawing/{{drawing.id}}">{{drawing.comments.length}} {{format_plural "comment"
+                drawing.comments.length}}</a>
+        </div>
+        <button type="submit">Save post</button>
+        <button type="button" class="delete-post-btn">Delete post</button>
+    </form>
+</article>
+
+<form class="comment-form">
+    <div>
+        <textarea name="comment-body"></textarea>
+    </div>
+
+    <div>
+        <button type="submit">add comment</button>
+    </div>
+</form>
+
+{{> comments post.comments}}
+
+<script src="/javascript/edit-title.js"></script>
+<script src="/javascript/delete-post.js"></script>
+<script src="/javascript/comment.js"></script>
