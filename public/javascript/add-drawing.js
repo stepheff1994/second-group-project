@@ -2,13 +2,14 @@
 async function newFormHandler(event) {
     event.preventDefault();
 
-    // const draw_title = document.querySelector('input[name="drawing-title"]').value;
+    const title = document.querySelector('input[name="drawing-title"]').value;
     const image = canvas.toDataURL();
 
     const response = await fetch(`/api/drawing`, {
         method: 'POST',
         body: JSON.stringify({
-            image
+            image,
+            title
         }),
         headers: {
             'Content-Type': 'application/json'
@@ -20,5 +21,5 @@ async function newFormHandler(event) {
     } else {
         alert(response.statusText);
     }
-
-    document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
+}
+document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
