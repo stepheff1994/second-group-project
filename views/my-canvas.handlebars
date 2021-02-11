@@ -1,16 +1,17 @@
 <section>
     <h2>Create New Drawing</h2>
+
+    <canvas id="canvas" width="200" height="200" style="border:3px solid black"></canvas>
+
+
+    <button id="clearCanvas">Clear Canvas</button>
+    <br></br>
     <form class="new-post-form">
-        <canvas id="canvas" width="200" height="200" style="border:1px solid"></canvas>
-
-
-        <button id="clearCanvas">Clear Canvas</button>
-        <br></br>
         <input type="text" class="hide" id="draw_dataURL" rows="5" name="draw_dataURL">
         <label for="drawing-title">Title</label>
         <input type="text" id="drawing-title" name="drawing-title" />
         <button type="submit" id="postCanvas">Submit Canvas</button>
-
+    </form>
 
 </section>
 
