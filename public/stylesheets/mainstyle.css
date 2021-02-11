@@ -195,6 +195,11 @@ button:hover {
   opacity: 0;
   position: relative;
 }
+.user-comment{
+  display: flex;
+justify-content: space-evenly;
+
+}
 
 @keyframes commentSlide {
   100% {

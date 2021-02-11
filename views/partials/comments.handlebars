@@ -1,7 +1,7 @@
 {{#each this}}
-<div class="card comment-anim" style="max-width: 74.5%;">
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item">{{comment}} __ by <i><strong>{{user.username}}</strong></i></li>
+<div class="card comment-anim " style="max-width: 74.5%;">
+    <ul class="list-group list-group-flush ">
+        <li class="list-group-item user-comment">{{comment}} <i>__ by <strong>{{user.username}}</strong></i>{{#if this.loggedIn}}<button>Delete</button>{{/if}}</li>
     </ul>
 </div>
 {{/each}}
