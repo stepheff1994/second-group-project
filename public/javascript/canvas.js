@@ -14,12 +14,12 @@
     const context = canvas.getContext('2d');
 
     const gradient = context.createLinearGradient(0, 0, 170, 0);
-    gradient.addColorStop("0", "blue");
-    gradient.addColorStop("0.5", "magenta");
-    gradient.addColorStop("1.0", "lightblue");
+    gradient.addColorStop("0", "teal");
+    gradient.addColorStop("0.5", "orange");
+    gradient.addColorStop("1.0", "pink");
 
     context.strokeStyle = gradient;
-    context.lineWidth = 4;
+    context.lineWidth = 1.4;
 
     // adding the buttons in to clear and post
 
@@ -104,12 +104,12 @@
     // so I set to the canvas.width and reset the brushes
     function clearCanvas() {
         canvas.width = canvas.width;
-        gradient.addColorStop("0", "blue");
-        gradient.addColorStop("0.5", "magenta");
-        gradient.addColorStop("1.0", "lightblue");
+        gradient.addColorStop("0", "teal");
+        gradient.addColorStop("0.5", "orange");
+        gradient.addColorStop("1.0", "pink");
 
         context.strokeStyle = gradient;
-        context.lineWidth = 4;
+        context.lineWidth = 1.4;
 
     }
 

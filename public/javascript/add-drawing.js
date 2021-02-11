@@ -17,7 +17,7 @@ async function newFormHandler(event) {
     });
 
     if (response.ok) {
-        document.location.replace('/my-canvas');
+        document.location.replace('/');
     } else {
         alert(response.statusText);
     }
