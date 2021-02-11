@@ -9,6 +9,7 @@ router.get('/', (req, res) => {
         attributes: [
             'id',
             'image',
+            'title',
             'user_id'
         ],
         include: [
@@ -69,6 +70,7 @@ router.get('/drawing/:id', (req, res) => {
         attributes: [
             'id',
             'image',
+            'title',
             'user_id'
         ],
         include: [
@@ -107,4 +109,7 @@ router.get('/drawing/:id', (req, res) => {
             res.status(500).json(err);
         });
 });
+
+
+
 module.exports = router;

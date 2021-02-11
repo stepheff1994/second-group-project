@@ -14,21 +14,19 @@
 
 </section>
 
-{{!--
-{{#if drawing.length}}
+{{#if posts.length}}
 <section>
-    <h2>Your drawings</h2>
+    <h2>Your Drawings</h2>
     <ol>
-        {{#each drawing as |drawing|}}
+        {{#each posts as |post|}}
         <li>
-            {{> post-info drawing}}
-            <a href="/dashboard/edit/{{drawing.id}}" class="edit-link">Edit Title</a>
+            {{> post-info post}}
+            <a href="/my-canvas/edit/{{post.id}}" class="edit-title">Edit Drawing</a>
         </li>
         {{/each}}
     </ol>
 </section>
 {{/if}}
---}}
 
 <script src="/javascript/canvas.js"></script>
 <script src="/javascript/add-drawing.js"></script>
