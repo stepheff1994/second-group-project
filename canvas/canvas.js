@@ -14,9 +14,13 @@
     const context = canvas.getContext('2d');
 
     const gradient = context.createLinearGradient(0, 0, 170, 0);
-    gradient.addColorStop("0", "blue");
-    gradient.addColorStop("0.5", "magenta");
-    gradient.addColorStop("1.0", "lightblue");
+    gradient.addColorStop(".14", "red");
+    gradient.addColorStop(".28", "orange");
+    gradient.addColorStop(".42", "yellow");
+    gradient.addColorStop(".56", "green");
+    gradient.addColorStop(".7", "blue");
+    gradient.addColorStop("0.84", "indigo");
+    gradient.addColorStop("1.0", "violet");
 
     context.strokeStyle = gradient;
     context.lineWidth = 4;
@@ -111,9 +115,13 @@
     // so I set to the canvas.width and reset the brushes
     function clearCanvas() {
         canvas.width = canvas.width;
-        gradient.addColorStop("0", "blue");
-        gradient.addColorStop("0.5", "magenta");
-        gradient.addColorStop("1.0", "lightblue");
+        gradient.addColorStop(".14", "red");
+        gradient.addColorStop(".28", "orange");
+        gradient.addColorStop(".42", "yellow");
+        gradient.addColorStop(".56", "green");
+        gradient.addColorStop(".7", "blue");
+        gradient.addColorStop("0.84", "indigo");
+        gradient.addColorStop("1.0", "violet");
 
         context.strokeStyle = gradient;
         context.lineWidth = 4;
