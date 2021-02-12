@@ -1,11 +1,8 @@
-<div class="col">
-    <div class="card h-100 card-anim">
-        <img src={{drawing.image}} class="card-img-top">
-        <div class="card-body badge bg-light">
-            <h5 class="card-title"> <a href="/drawing/{{user.drawing_id}}">{{drawing.title}}</a>
-                <span>(by {{user.username}})</span>
-            </h5>
-            {{comments.length}} {{format_plural "comment" comments.length}}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-9">
+            <div class="card">
+                {{> user-info users}}
+            </div>
         </div>
     </div>
-</div>
