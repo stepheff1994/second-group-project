@@ -17,17 +17,17 @@ footer {
   bottom: 0px;
   padding-bottom: 1.5%;
   background-image: url("/uploads/drawings/backgroundcanvas.jpg");
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  box-shadow: inset 0 0 5px 5px #888;
+  position: fixed;
+  padding: 20px 20px 0px 20px;
   width: 100%;
-  font-family: 'Permanent Marker', cursive;
+  /* Height of the footer*/
+  height: 70px;
 }
 
 main {
-  flex: 1;
-  padding: 2% 4%;
+  padding: 10px;
+  padding-bottom: 70px;
+  min-height: 100%
 }
 
 main {

@@ -28,12 +28,12 @@ Drawing.init(
       references: {
         model: "user",
         key: "id",
-      },
+      }
     },
   },
   {
     sequelize,
-    timestamps: false,
+    // timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: "drawing",
