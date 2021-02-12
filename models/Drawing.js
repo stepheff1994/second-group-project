@@ -28,7 +28,7 @@ Drawing.init(
       references: {
         model: "user",
         key: "id",
-      },
+      }
     },
   },
   {

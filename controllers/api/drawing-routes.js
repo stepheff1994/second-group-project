@@ -1,9 +1,10 @@
 const router = require('express').Router();
 const { Drawing, User, Comment } = require('../../models');
-// get all users
+// get all drawings
 router.get('/', (req, res) => {
     console.log('======================');
     Drawing.findAll({
+        /* order: [[‘created_at’, ‘DESC’]], */
         attributes: [
             'id',
             'image',

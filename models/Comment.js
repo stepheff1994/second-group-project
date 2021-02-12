@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Comment extends Model {}
+class Comment extends Model { }
 
 // define table columns and configuration
 Comment.init(
@@ -31,7 +31,7 @@ Comment.init(
       references: {
         model: "drawing",
         key: "id",
-      },
+      }
     },
   },
   {
