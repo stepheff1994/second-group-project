@@ -222,6 +222,19 @@ button:hover {
   position: relative;
 }
 
+.card-text{
+  font-size:14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.card-name{
+  font-size:18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .comment-anim {
   animation: 1s commentSlide ease-in-out forwards 2s;
   opacity: 0;
