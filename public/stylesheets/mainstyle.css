@@ -23,6 +23,7 @@ html {
 footer {
   bottom: 0px;
   padding-bottom: 1.5%;
+  position: fixed;
   background-image: url("/uploads/drawings/backgroundcanvas.jpg");
   display: flex;
   justify-content: space-between;
@@ -52,6 +53,7 @@ header {
   font-size: 50px;
   color: #760270;
   font-family: 'Permanent Marker', cursive;
+  
 }
 nav {
   display: flex;
@@ -201,6 +203,7 @@ button:hover {
   animation: 1s slideIn ease-in-out forwards 1s;
   opacity: 0;
   position: relative;
+  
 }
 
 .card-anim {
