@@ -1,9 +1,9 @@
 <div class="col">
     <div class="card h-100 card-anim">
-        <img src={{image}} class="card-img-top">
+        <img src={{drawing.image}} class="card-img-top">
         <div class="card-body badge bg-light">
-            <h5 class="card-title"> <a href="/drawing/{{id}}">{{title}}</a>
-                <span>(by <a href="/users/{{user_id}}">{{user.username}})</a></span>
+            <h5 class="card-title"> <a href="/drawing/{{user.drawing_id}}">{{drawing.title}}</a>
+                <span>(by {{user.username}})</span>
             </h5>
             {{comments.length}} {{format_plural "comment" comments.length}}
         </div>

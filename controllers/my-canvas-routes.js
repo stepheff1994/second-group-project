@@ -4,7 +4,7 @@ const { Drawing, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 // get all drawings
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
   console.log('======================');
   Drawing.findAll({
     attributes: [
@@ -84,5 +84,10 @@ router.get('/edit/:id', withAuth, (req, res) => {
       res.status(500).json(err);
     });
 });
+
+router.get('/create', withAuth, (req, res) => {
+  res.render('create-drawing');
+});
+
 
 module.exports = router;

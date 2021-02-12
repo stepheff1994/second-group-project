@@ -1,4 +1,4 @@
-<article>
+<div>
     <a href="/my-canvas"> &larr; Back to My Canvas</a>
     <h2>
         Edit Title:
@@ -6,14 +6,14 @@
     <img src={{post.image}}>
     <form class="edit-drawing-form">
         <div>
-            <input name="edit-drawing-title" type="text" value="{{post.~title}}" />
+            <input name="edit-drawing-title" type="text" value="{{post.title}}" />
         </div>
 
 
         <button type="submit">Save New Title</button>
         <button type="button" class="delete-post-btn">Delete Drawing</button>
     </form>
-</article>
+</div>
 
 <script src="/javascript/edit-title.js"></script>
 <script src="/javascript/delete-post.js"></script>

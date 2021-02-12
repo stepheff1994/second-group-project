@@ -14,7 +14,6 @@
     const context = canvas.getContext('2d');
 
     const gradient = context.createLinearGradient(0, 0, 170, 0);
-
     gradient.addColorStop(".14", "red");
     gradient.addColorStop(".28", "orange");
     gradient.addColorStop(".42", "yellow");
@@ -24,13 +23,20 @@
     gradient.addColorStop("1.0", "violet");
 
     context.strokeStyle = gradient;
-    context.lineWidth = 1.4;
+    context.lineWidth = 4;
 
     // adding the buttons in to clear and post
-
+    let drawData = document.getElementById("draw_dataURL");
     let clearBtn = document.getElementById("clearCanvas");
-
+    let submitBtn = document.getElementById("postCanvas");
     clearBtn.addEventListener("click", function (event) {
+        clearCanvas();
+    }, false);
+
+    submitBtn.addEventListener("click", function (event) {
+        let dataUrl = canvas.toDataURL();
+        drawData.innerHTML = dataUrl;
+        drawDataImage.setAttribute("src", dataUrl);
         clearCanvas();
     }, false);
 
@@ -109,7 +115,6 @@
     // so I set to the canvas.width and reset the brushes
     function clearCanvas() {
         canvas.width = canvas.width;
-
         gradient.addColorStop(".14", "red");
         gradient.addColorStop(".28", "orange");
         gradient.addColorStop(".42", "yellow");
@@ -119,7 +124,7 @@
         gradient.addColorStop("1.0", "violet");
 
         context.strokeStyle = gradient;
-        context.lineWidth = 1.4;
+        context.lineWidth = 4;
 
     }
 
@@ -129,3 +134,5 @@
         drawCanvas();
     })();
 })();
+
+

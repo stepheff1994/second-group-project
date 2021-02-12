@@ -79,6 +79,14 @@ form label {
   font-family: 'Permanent Marker', cursive;
 }
 
+.titleDraw {
+  color: black;
+}
+
+.edit-title {
+  color: black;
+}
+
 .hero-form {
   background-image: url("/uploads/drawings/backgroundcanvas.jpg");
   border-radius: 0.25em;

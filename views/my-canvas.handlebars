@@ -1,23 +1,11 @@
 <section>
-    <h2>Create New Drawing</h2>
-
-    <canvas id="canvas" width="200" height="200" style="border:3px solid black"></canvas>
-
-
-    <button id="clearCanvas">Clear Canvas</button>
-    <br></br>
-    <form class="new-post-form">
-        <input type="text" class="hide" id="draw_dataURL" rows="5" name="draw_dataURL">
-        <label for="drawing-title">Title</label>
-        <input type="text" id="drawing-title" name="drawing-title" />
-        <button type="submit" id="postCanvas">Submit Canvas</button>
-    </form>
-
+    <a href="/my-canvas/create">Create Drawing!</a>
 </section>
 
 {{#if posts.length}}
+
 <section>
-    <h2>Your Drawings</h2>
+    <h2 class="titleDraw">Your Drawings</h2>
     <ol>
         {{#each posts as |post|}}
         <li>
@@ -27,7 +15,5 @@
         {{/each}}
     </ol>
 </section>
-{{/if}}
 
-<script src="/javascript/canvas.js"></script>
-<script src="/javascript/add-drawing.js"></script>
+{{/if}}
