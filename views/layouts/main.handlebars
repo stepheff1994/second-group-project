@@ -10,16 +10,17 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
             integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="stylesheet" href="/stylesheets/mainstyle.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
     </head>
     <header>
         <h1><a id="title" class="title-anim" href="/">Meural</a></h1>
         <nav class="navbar mt-2">
             {{#if loggedIn}}
-            <a href="/dashboard">Dashboard</a>
-            <a href="/dashboard/create/">Create Drawing</a>
+            <a href="/my-canvas">My Canvas</a>
             <button id="logout">Logout</button>
             {{else}}
-            <a href="/">Gallery</a>
             <a href="/signup">Register</a>
             {{/if}}
         </nav>
@@ -33,7 +34,7 @@
         <div class="row-is-full content has-text-centered">
             <p>
                 {{#if loggedIn}} |
-                <a href="/dashboard">Dashboard</a> |
+                <a href="/my-canvas">My Canvas</a>
 
                 {{else}}
 

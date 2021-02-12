@@ -3,9 +3,8 @@ const sequelize = require('../config/connection');
 const { Drawing, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
-// get all posts for dashboard
-router.get('/', (req, res) => {
-  console.log(req.session);
+// get all drawings
+router.get('/', withAuth, (req, res) => {
   console.log('======================');
   Drawing.findAll({
     where: {
@@ -14,50 +13,58 @@ router.get('/', (req, res) => {
     attributes: [
       'id',
       'image',
-      // 'created_at'
+      'title',
+      'user_id'
     ],
     include: [
       {
+        model: User,
+        attributes: ['username']
+      },
+      {
         model: Comment,
-        attributes: ['id', 'comment', 'drawing_id', 'user_id'],
+        attributes: ['id', 'comment'],
         include: {
           model: User,
           attributes: ['username']
         }
-      },
-      {
-        model: User,
-        attributes: ['username']
       }
     ]
   })
-    .then(DrawData => {
-      const allDrawings = DrawData.map(post => post.get({ plain: true }));
-      res.render('dashboard', { allDrawings, loggedIn: true });
+    .then(drawData => {
+      // pass a single post object into the homepage template
+      // console.log(drawData[0]);
+      const posts = drawData.map(post => post.get({ plain: true }));
+      // console.log(posts)
+      res.render('my-canvas', {
+        posts,
+        loggedIn: req.session.loggedIn
+      });
     })
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
 });
-
-/* router.get('/edit/:id', withAuth, (req, res) => {
+// edit title in my canvas
+router.get('/edit/:id', withAuth, (req, res) => {
   Drawing.findByPk(req.params.id, {
     attributes: [
       'id',
       'image',
+      'title',
       'user_id',
-      'created_at'
+      // 'created_at'
     ],
     include: [
-      {
+      /* {
         model: Comment,
         attributes: ['id', 'comment', 'drawing_id', 'user_id', 'created_at'],
         include: {
           model: User,
           attributes: ['username']
         }
-      },
+      }, */
       {
         model: User,
         attributes: ['username']
@@ -67,8 +74,8 @@ router.get('/', (req, res) => {
     .then(dbDrawData => {
       if (dbDrawData) {
         const post = dbDrawData.get({ plain: true });
-        
-        res.render('edit-drawing', {
+
+        res.render('edit-title', {
           post,
           loggedIn: true
         });
@@ -79,6 +86,11 @@ router.get('/', (req, res) => {
     .catch(err => {
       res.status(500).json(err);
     });
-}); */
+});
+
+router.get('/create', withAuth, (req, res) => {
+  res.render('create-drawing');
+});
+
 
 module.exports = router;

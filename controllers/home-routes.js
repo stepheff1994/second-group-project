@@ -9,6 +9,7 @@ router.get('/', (req, res) => {
         attributes: [
             'id',
             'image',
+            'title',
             'user_id'
         ],
         include: [
@@ -61,6 +62,7 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
+// find a single drawing by id 
 router.get('/drawing/:id', (req, res) => {
     Drawing.findOne({
         where: {
@@ -69,6 +71,7 @@ router.get('/drawing/:id', (req, res) => {
         attributes: [
             'id',
             'image',
+            'title',
             'user_id'
         ],
         include: [
@@ -107,4 +110,50 @@ router.get('/drawing/:id', (req, res) => {
             res.status(500).json(err);
         });
 });
+
+// show all drawings by a single user 
+router.get('/users/:id', (req, res) => {
+    User.findOne({
+        //   attributes: { include: ['password'] },
+        where: {
+            id: req.params.id
+        },
+        include: [
+            {
+                model: Drawing,
+                attributes: ['id', 'image', 'title', 'user_id']
+            },
+            {
+                model: Comment,
+                attributes: ['id', 'comment'],
+                include: {
+                    model: Drawing,
+                    attributes: ['id']
+                }
+            }
+        ]
+
+    })
+        .then(userData => {
+            if (!userData) {
+                res.status(404).json({ message: 'No user found with this id' });
+                return;
+            }
+
+            // serialize the data
+            const post = userData.get({ plain: true });
+            console.log(post)
+            // pass data to template
+            res.render('user-drawings', {
+                post,
+                loggedIn: req.session.loggedIn
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+
 module.exports = router;
