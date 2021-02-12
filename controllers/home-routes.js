@@ -141,11 +141,11 @@ router.get('/users/:id', (req, res) => {
             }
 
             // serialize the data
-            const post = userData.get({ plain: true });
-            console.log(post)
+            const users = userData.get({ plain: true });
+            console.log(users)
             // pass data to template
             res.render('user-drawings', {
-                post,
+                users,
                 loggedIn: req.session.loggedIn
             });
         })
