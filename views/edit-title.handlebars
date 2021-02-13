@@ -1,10 +1,10 @@
-<div>
-    <a href="/my-canvas"> &larr; Back to My Canvas</a>
-    <h2>
+<div class="container justify-content-center">
+    <a class = "page-header" href="/my-canvas"> &larr; Back to My Canvas</a>
+    <h2 class = "page-header">
         Edit Title:
     </h2>
-    <img src={{post.image}}>
-    <form class="edit-drawing-form">
+    <img src={{post.image}} class="card-img-top">
+    <form id = "drawing-title" class="edit-drawing-form">
         <div>
             <input name="edit-drawing-title" type="text" value="{{post.title}}" />
         </div>

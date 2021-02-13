@@ -89,7 +89,9 @@ router.get('/edit/:id', withAuth, (req, res) => {
 });
 
 router.get('/create', withAuth, (req, res) => {
-  res.render('create-drawing');
+  res.render('create-drawing',{
+    loggedIn: true
+  });
 });
 
 
