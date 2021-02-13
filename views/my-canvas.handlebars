@@ -8,12 +8,17 @@
     <h2 class="titleDraw">Your Drawings</h2>
     <ol>
         {{#each posts as |post|}}
+        
         <li>
             {{> post-info post}}
+            
             <a href="/my-canvas/edit/{{post.id}}" class="edit-title">Edit Drawing</a>
+           
         </li>
+
         {{/each}}
     </ol>
 </section>
 
 {{/if}}
+

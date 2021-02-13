@@ -1,0 +1,28 @@
+<article>
+  <a href="/">Dashboard</a>
+  <a href="/mydrawing">My Drawing</a>
+  <h2 class="title mt-5">Edit post</h2><hr>
+  <form class="edit-post-form">
+    <div>
+        <label for="post-title">Image</label>
+      <input type="text" id="draw_dataURL" rows="5" name="draw_dataURL" value="{{drawing.image}}" />
+      </div>
+      <div>
+      <input class="input" name="drawing-title" type="text" value="{{drawing.title}}" />
+    </div>
+    
+    <div class="is-pulled-right">
+       created by you on 
+      |
+      <a href="/drawing/{{drawing.id}}">{{drawing.comments.length}} {{format_plural "comment" drawing.comments.length}}</a>
+    </div>
+    <button type="submit" class="button is-success">save post</button>
+    <button type="button" class="button is-danger delete-post-btn">delete post</button>
+  </form>
+</article>
+
+{{> comments post.comments}}
+
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
+<script src="/javascript/comment.js"></script>

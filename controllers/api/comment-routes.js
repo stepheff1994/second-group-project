@@ -30,19 +30,23 @@ router.post('/', withAuth, (req, res) => {
     };
 });
 // delete a comment
-router.delete("/:id", withAuth, (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Comment.destroy({
-        where: { id: req.params.id },
-    }).then(commentData => {
-        if (!commentData) {
-            res.status(404).json({ message: 'No comment found with this id!' });
-            return;
+        where: {
+          id: req.params.id
         }
-        res.json(commentData)
-    }).catch(err => {
-        console.log(err);
-        res.status(400).json(err);
-    });
+      })
+        .then(dbCommentData => {
+          if (!dbCommentData) {
+            res.status(404).json({ message: 'No comment found with this id' });
+            return;
+          }
+          res.json(dbCommentData);
+        })
+        .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
+        });
 });
 
 module.exports = router;
