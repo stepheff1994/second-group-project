@@ -1,0 +1,6 @@
+<h2 class = "page-header">{{users.username}} Drawings</h2>
+<div class="row row-cols-1 row-cols-lg-5 row-cols-md-3 mb-3 justify-content-around">
+    {{#each users as |user|}}
+    {{> user-info user}}
+    {{/each}}
+</div>

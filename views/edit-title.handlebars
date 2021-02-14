@@ -1,0 +1,19 @@
+<div class="container justify-content-center">
+    <a class = "page-header" href="/my-canvas"> &larr; Back to My Canvas</a>
+    <h2 class = "page-header">
+        Edit Title:
+    </h2>
+    <img src={{post.image}} class="card-img-top">
+    <form id = "drawing-title" class="edit-drawing-form">
+        <div>
+            <input name="edit-drawing-title" type="text" value="{{post.title}}" />
+        </div>
+
+
+        <button type="submit">Save New Title</button>
+        <button type="button" class="delete-post-btn">Delete Drawing</button>
+    </form>
+</div>
+
+<script src="/javascript/edit-title.js"></script>
+<script src="/javascript/delete-post.js"></script>

@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-7 col-sm-5">
+      {{> post-info post}}
+    </div>
+  </div>
+  <br>
+
+  {{#if loggedIn}}
+  <form class="comment-form ">
+    <div>
+      <textarea name="comment-body"></textarea>
+    </div>
+    <div>
+      <button type="submit">Add Comment</button>
+    </div>
+  </form>
+  {{/if}}
+  {{> comments post.comments}}
+</div>
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}
