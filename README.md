@@ -12,6 +12,7 @@
 🔍 A Meural made using node.js, express.js, mySQL, Sequelize ORM and handlebars.js that allows users from little children to adults to draw an image and share with anyone.
 
 ## User Story
+ we can copy here the yser story in the presentation
 
 ## Acceptance Criteria
 
@@ -58,5 +59,5 @@ quit
 
 ## Contibutors
 ✏️
-
+-shld we put here our github or just names?
 
