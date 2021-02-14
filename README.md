@@ -59,7 +59,7 @@ quit
 
 ## Contibutors
 ✏️ 
-: [eramos](https://github.com/eramos3)
-: [clhurlbut Cassandra Hurlbu](https://github.com/clhurlbut)
-: [stepheff1994](https://github.com/stepheff1994)
-: [ArlonTuazon](https://github.com/ArlonTuazon)
+#### [eramos](https://github.com/eramos3)
+#### [clhurlbut Cassandra Hurlbut](https://github.com/clhurlbut)
+#### [stepheff1994](https://github.com/stepheff1994)
+#### [ArlonTuazon](https://github.com/ArlonTuazon)
