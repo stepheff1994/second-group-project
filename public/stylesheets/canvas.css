@@ -1,0 +1,40 @@
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+#canvas {
+    background-color: white;
+    width: 100%;
+    font-size: 1.2rem;
+    border-radius: 0.3rem;
+    font-family: 'Permanent Marker', cursive;
+    color: black
+}
+
+/* #colourInput {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  } */
+
+#clearCanvas {
+    box-shadow: inset 0 0 5px 5px #888;
+    border: 3px solid #024e76;
+    background-image: url("/uploads/drawings/backgroundcanvas.jpg");
+    padding: 20px;
+    color: #760270;
+    width: 40%;
+    margin: 3.5%;
+    box-shadow: inset 0 0 5px 5px;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.drawing-titles {
+    box-shadow: inset 0 0 5px 5px #888;
+    padding: 20px;
+    color: #760270;
+    width: 40%;
+    margin: 3.5%;
+    box-shadow: inset 0 0 5px 5px;
+    font-family: 'Permanent Marker', cursive;
+}

@@ -1,8 +1,8 @@
-<div class="container">
-    <div class="row">
-        <div class="col-lg-9">
-            <div class="card">
-                {{> user-info users}}
-            </div>
-        </div>
-    </div>
+<div class="row row-cols-1 row-cols-md-5 g-4"></div>
+<h2>{{users.username}}'s Drawings</h2>
+{{#each users as |user|}}
+<li>
+    {{> user-info user}}
+</li>
+{{/each}}
+</div>

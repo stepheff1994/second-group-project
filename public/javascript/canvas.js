@@ -1,3 +1,4 @@
+
 (function () {
 
     // Here we use the .requestAnimationFrame to set a interval for the animation (this is the workaround we found for touchscreen)
@@ -9,20 +10,27 @@
             };
     })();
     // setting the context for the canvas
-    const canvas = document.querySelector('#canvas');
+    const canvas = document.getElementById("canvas");
 
     const context = canvas.getContext('2d');
+    /*  canvas.width = window.innerWidth;
+     canvas.height = window.innerHeight; */
 
-    const gradient = context.createLinearGradient(0, 0, 170, 0);
-    gradient.addColorStop(".14", "red");
-    gradient.addColorStop(".28", "orange");
-    gradient.addColorStop(".42", "yellow");
-    gradient.addColorStop(".56", "green");
-    gradient.addColorStop(".7", "blue");
-    gradient.addColorStop("0.84", "indigo");
-    gradient.addColorStop("1.0", "violet");
+    const gradient = context.createLinearGradient(10, 0, 390, 0);
+    gradient.addColorStop(0, 'red');
+    gradient.addColorStop(1 / 6, 'orange');
+    gradient.addColorStop(2 / 6, 'yellow');
+    gradient.addColorStop(3 / 6, 'green')
+    gradient.addColorStop(4 / 6, 'aqua');
+    gradient.addColorStop(5 / 6, 'blue');
+    gradient.addColorStop(1, 'purple');
 
-    context.strokeStyle = gradient;
+    color = document.getElementById("colourInput").value;
+
+    context.strokeStyle = color;
+    context.lineJoin = context.lineCap = 'round';
+    context.shadowBlur = 3;
+    context.shadowColor = 'rgb(0, 0, 0)';
     context.lineWidth = 4;
 
     // adding the buttons in to clear and post
@@ -45,45 +53,60 @@
     let mousePosition = { x: 0, y: 0 };
     let lastPosition = mousePosition;
     // allow drawing when mouse is down and track
-    document.addEventListener("mousedown", function (event) {
+    canvas.addEventListener("mousedown", function (event) {
         drawing = true;
         lastPosition = getMousePosition(canvas, event);
     }, false);
     // stop drawing when mouse is up 
-    document.addEventListener("mouseup", function (event) {
+    canvas.addEventListener("mouseup", function (event) {
         drawing = false;
     }, false);
     //look for when it is moving and track 
-    document.addEventListener("mousemove", function (event) {
+    canvas.addEventListener("mousemove", function (event) {
         mousePosition = getMousePosition(canvas, event);
     }, false);
 
     // Set up touch events for drawing
     // look for when it is touched and use the mousedown
-    document.addEventListener("touchstart", function (event) {
+    canvas.addEventListener("touchstart", function (event) {
         mousePosition = getTouchPosition(canvas, event);
         let touch = event.touches[0];
         let mouseEvent = new MouseEvent("mousedown", {
             clientX: touch.clientX,
             clientY: touch.clientY
         });
-        document.dispatchEvent(mouseEvent);
+        canvas.dispatchEvent(mouseEvent);
     }, false);
     // look for when it is not touched and use the mouseup
-    document.addEventListener("touchend", function (event) {
+    canvas.addEventListener("touchend", function (event) {
         let mouseEvent = new MouseEvent("mouseup", {});
-        document.dispatchEvent(mouseEvent);
+        canvas.dispatchEvent(mouseEvent);
     }, false);
     // look for when it is moving and touching and use mousemove
-    document.addEventListener("touchmove", function (event) {
+    canvas.addEventListener("touchmove", function (event) {
         let touch = event.touches[0];
         let mouseEvent = new MouseEvent("mousemove", {
             clientX: touch.clientX,
             clientY: touch.clientY
         });
-        document.dispatchEvent(mouseEvent);
+        canvas.dispatchEvent(mouseEvent);
     }, false);
-
+    // Prevent scrolling when touching the canvas
+    canvas.addEventListener("touchstart", function (event) {
+        if (event.target == canvas) {
+            event.preventDefault();
+        }
+    }, false);
+    canvas.addEventListener("touchend", function (event) {
+        if (event.target == canvas) {
+            event.preventDefault();
+        }
+    }, false);
+    canvas.addEventListener("touchmove", function (event) {
+        if (event.target == canvas) {
+            event.preventDefault();
+        }
+    }, false);
     // Get the position of the mouse on the canvas
     function getMousePosition(canvasDom, mouseEvent) {
         let canvasPosition = canvasDom.getBoundingClientRect();
@@ -115,24 +138,22 @@
     // so I set to the canvas.width and reset the brushes
     function clearCanvas() {
         canvas.width = canvas.width;
-        gradient.addColorStop(".14", "red");
-        gradient.addColorStop(".28", "orange");
-        gradient.addColorStop(".42", "yellow");
-        gradient.addColorStop(".56", "green");
-        gradient.addColorStop(".7", "blue");
-        gradient.addColorStop("0.84", "indigo");
-        gradient.addColorStop("1.0", "violet");
-
+        gradient.addColorStop(0, 'red');
+        gradient.addColorStop(1 / 6, 'orange');
+        gradient.addColorStop(2 / 6, 'yellow');
+        gradient.addColorStop(3 / 6, 'green')
+        gradient.addColorStop(4 / 6, 'aqua');
+        gradient.addColorStop(5 / 6, 'blue');
+        gradient.addColorStop(1, 'purple');
         context.strokeStyle = gradient;
+        context.lineJoin = context.lineCap = 'round';
+        context.shadowBlur = 3;
+        context.shadowColor = 'rgb(0, 0, 0)';
         context.lineWidth = 4;
-
     }
-
     // Start the animation to draw (this is the only way I can get it work on touchscreen)
     (function drawLoop() {
         requestAnimationFrame(drawLoop);
         drawCanvas();
     })();
 })();
-
-

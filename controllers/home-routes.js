@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Drawing, User, Comment } = require('../models');
+const { post } = require('./api/drawing-routes');
 
 
 // get all drawings
@@ -117,7 +118,7 @@ router.get('/drawing/:id', (req, res) => {
 // show all drawings by a single user 
 router.get('/users/:id', (req, res) => {
     User.findOne({
-        //   attributes: { include: ['password'] },
+        attributes: { include: ['password'] },
         where: {
             id: req.params.id
         },
@@ -125,14 +126,6 @@ router.get('/users/:id', (req, res) => {
             {
                 model: Drawing,
                 attributes: ['id', 'image', 'title', 'user_id']
-            },
-            {
-                model: Comment,
-                attributes: ['id', 'comment'],
-                include: {
-                    model: Drawing,
-                    attributes: ['id']
-                }
             }
         ]
 
