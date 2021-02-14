@@ -57,7 +57,7 @@ quit
 
 `npm start`
 
-## Contibutors
+## Contributors
 ✏️ 
 #### [eramos](https://github.com/eramos3)
 #### [clhurlbut Cassandra Hurlbut](https://github.com/clhurlbut)
