@@ -53,7 +53,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
       'id',
       'image',
       'title',
-      'user_id',
+      'user_id'
       // 'created_at'
     ],
     include: [
@@ -89,7 +89,9 @@ router.get('/edit/:id', withAuth, (req, res) => {
 });
 
 router.get('/create', withAuth, (req, res) => {
-  res.render('create-drawing');
+  res.render('create-drawing',{
+    loggedIn: true
+  });
 });
 
 

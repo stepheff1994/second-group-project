@@ -10,15 +10,20 @@
     // setting the context for the canvas
     const canvas = document.getElementById("canvas");
     const context = canvas.getContext('2d');
-    const gradient = context.createLinearGradient(0, 0, 170, 0);
-    gradient.addColorStop(".14", "red");
-    gradient.addColorStop(".28", "orange");
-    gradient.addColorStop(".42", "yellow");
-    gradient.addColorStop(".56", "green");
-    gradient.addColorStop(".7", "blue");
-    gradient.addColorStop("0.84", "indigo");
-    gradient.addColorStop("1.0", "violet");
+    /*  canvas.width = window.innerWidth;
+     canvas.height = window.innerHeight; */
+    const gradient = context.createLinearGradient(10, 0, 390, 0);
+    gradient.addColorStop(0, 'red');
+    gradient.addColorStop(1 / 6, 'orange');
+    gradient.addColorStop(2 / 6, 'yellow');
+    gradient.addColorStop(3 / 6, 'green')
+    gradient.addColorStop(4 / 6, 'aqua');
+    gradient.addColorStop(5 / 6, 'blue');
+    gradient.addColorStop(1, 'purple');
     context.strokeStyle = gradient;
+    context.lineJoin = context.lineCap = 'round';
+    context.shadowBlur = 3;
+    context.shadowColor = 'rgb(0, 0, 0)';
     context.lineWidth = 4;
     // adding the buttons in to clear and post
     let drawData = document.getElementById("draw_dataURL");
@@ -120,14 +125,17 @@
     // so I set to the canvas.width and reset the brushes
     function clearCanvas() {
         canvas.width = canvas.width;
-        gradient.addColorStop(".14", "red");
-        gradient.addColorStop(".28", "orange");
-        gradient.addColorStop(".42", "yellow");
-        gradient.addColorStop(".56", "green");
-        gradient.addColorStop(".7", "blue");
-        gradient.addColorStop("0.84", "indigo");
-        gradient.addColorStop("1.0", "violet");
+        gradient.addColorStop(0, 'red');
+        gradient.addColorStop(1 / 6, 'orange');
+        gradient.addColorStop(2 / 6, 'yellow');
+        gradient.addColorStop(3 / 6, 'green')
+        gradient.addColorStop(4 / 6, 'aqua');
+        gradient.addColorStop(5 / 6, 'blue');
+        gradient.addColorStop(1, 'purple');
         context.strokeStyle = gradient;
+        context.lineJoin = context.lineCap = 'round';
+        context.shadowBlur = 3;
+        context.shadowColor = 'rgb(0, 0, 0)';
         context.lineWidth = 4;
     }
     // Start the animation to draw (this is the only way I can get it work on touchscreen)

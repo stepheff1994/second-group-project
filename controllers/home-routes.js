@@ -6,11 +6,13 @@ const { Drawing, User, Comment } = require('../models');
 router.get('/', (req, res) => {
     console.log('======================');
     Drawing.findAll({
+        order: [['created_at', 'DESC']],
         attributes: [
             'id',
             'image',
             'title',
-            'user_id'
+            'user_id',
+            'created_at'
         ],
         include: [
             {
@@ -19,7 +21,7 @@ router.get('/', (req, res) => {
             },
             {
                 model: Comment,
-                attributes: ['id', 'comment'],
+                attributes: ['id', 'comment', 'created_at'],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -72,7 +74,8 @@ router.get('/drawing/:id', (req, res) => {
             'id',
             'image',
             'title',
-            'user_id'
+            'user_id',
+            'created_at'
         ],
         include: [
             {
@@ -82,7 +85,7 @@ router.get('/drawing/:id', (req, res) => {
             },
             {
                 model: Comment,
-                attributes: ['id', 'comment'],
+                attributes: ['id', 'comment', 'created_at'],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -114,7 +117,7 @@ router.get('/drawing/:id', (req, res) => {
 // show all drawings by a single user 
 router.get('/users/:id', (req, res) => {
     User.findOne({
-        //   attributes: { include: ['password'] },
+        attributes: { include: ['username'] },
         where: {
             id: req.params.id
         },
@@ -123,14 +126,6 @@ router.get('/users/:id', (req, res) => {
                 model: Drawing,
                 attributes: ['id', 'image', 'title', 'user_id']
             },
-            {
-                model: Comment,
-                attributes: ['id', 'comment'],
-                include: {
-                    model: Drawing,
-                    attributes: ['id']
-                }
-            }
         ]
 
     })

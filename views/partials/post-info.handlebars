@@ -1,11 +1,16 @@
-<div class="col">
+<div class="col mb-3">
     <div class="card h-100 card-anim">
         <img src={{image}} class="card-img-top">
         <div class="card-body badge bg-light">
-            <h5 class="card-title"> <a href="/drawing/{{id}}">{{title}}</a>
-                <span>(by <a href="/users/{{user_id}}">{{user.username}})</a></span>
-            </h5>
+            <h6 class="card-title card-text"> <a href="/drawing/{{id}}">{{title}}</a>
+                (by <a class="card-name" href="/users/{{user_id}}"><span class = "other-draws">{{user.username}}</span></a>)
+            </h6>
             {{comments.length}} {{format_plural "comment" comments.length}}
         </div>
     </div>
 </div>
+
+{{#if loggedIn}}
+<script src="/javascript/user-drawings.js"></script>
+{{/if}}
+

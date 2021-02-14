@@ -7,18 +7,15 @@
 <section>
     <h2 class="titleDraw">Your Drawings</h2>
     <ol>
-        {{#each posts as |post|}}
-        
-        <li>
-            {{> post-info post}}
-            
-            <a href="/my-canvas/edit/{{post.id}}" class="edit-title">Edit Drawing</a>
-           
-        </li>
-
-        {{/each}}
+        <div class="row row-cols-1 row-cols-lg-5 row-cols-md-3 mb-3 justify-content-around">
+            {{#each posts as |post|}}
+            <li class="col">
+                {{> post-info post}}
+                <a href="/my-canvas/edit/{{id}}" class="edit-title">Edit Drawing</a>
+            </li>
+            {{/each}}
+        </div>
     </ol>
 </section>
 
 {{/if}}
-
