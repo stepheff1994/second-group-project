@@ -59,5 +59,7 @@ quit
 
 ## Contibutors
 ✏️
--shld we put here our github or just names?
-
+[eramos](https://github.com/eramos3)
+[clhurlbut Cassandra Hurlbu](https://github.com/clhurlbut)
+[stepheff1994](https://github.com/stepheff1994)
+[ArlonTuazon](https://github.com/ArlonTuazon)
