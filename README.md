@@ -4,12 +4,10 @@
 - [Description](#description)
 - [User Story](#user-story)
 - [Acceptance Criteria](#acceptance-criteria)
-- [Table of Contents](#table-of-contents)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Testing](#testing)
-- [Contributing](#contributing)
-- [Questions](#questions)
+- [Contributors](#contributors)
+
 
 ## Description
 🔍 A Meural made using node.js, express.js, mySQL, Sequelize ORM and handlebars.js that allows users from little children to adults to draw an image and share with anyone.
