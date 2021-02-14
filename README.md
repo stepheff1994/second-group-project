@@ -5,7 +5,6 @@
 - [User Story](#user-story)
 - [Acceptance Criteria](#acceptance-criteria)
 - [Installation](#installation)
-- [Usage](#usage)
 - [Contributors](#contributors)
 
 
@@ -59,4 +58,5 @@ quit
 
 ## Contibutors
 ✏️
+
 
