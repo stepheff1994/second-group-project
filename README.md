@@ -45,7 +45,7 @@ Usage
 
 Run the following command at the root of your project and answer the prompted questions:
 
-`mysql -u root -`p`
+`mysql -u root -p`
 
 Enter PW when promted
 
@@ -58,8 +58,8 @@ quit
 `npm start`
 
 ## Contibutors
-✏️
-[eramos](https://github.com/eramos3)
-[clhurlbut Cassandra Hurlbu](https://github.com/clhurlbut)
-[stepheff1994](https://github.com/stepheff1994)
-[ArlonTuazon](https://github.com/ArlonTuazon)
+✏️ 
+: [eramos](https://github.com/eramos3)
+: [clhurlbut Cassandra Hurlbu](https://github.com/clhurlbut)
+: [stepheff1994](https://github.com/stepheff1994)
+: [ArlonTuazon](https://github.com/ArlonTuazon)
