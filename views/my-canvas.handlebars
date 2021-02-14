@@ -9,9 +9,9 @@
     <ol>
         <div class="row row-cols-1 row-cols-lg-5 row-cols-md-3 mb-3 justify-content-around">
             {{#each posts as |post|}}
-            <li class="col">
+            <li class="col-9">
                 {{> post-info post}}
-                <a href="/my-canvas/edit/{{id}}" class="edit-title">Edit Drawing</a>
+              <a href="/my-canvas/edit/{{id}}" class="edit-title edit-title-link">  <button class=" edit-title-button btn btn-outline-primary ml-3 mb-3">Edit</button></a>
             </li>
             {{/each}}
         </div>

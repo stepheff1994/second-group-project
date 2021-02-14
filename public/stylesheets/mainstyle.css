@@ -83,6 +83,17 @@ form label {
 
 .edit-title {
   color: black;
+  font-size: medium;
+}
+
+.edit-title-button{  
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.edit-title-link {
+  text-decoration: none;
 }
 
 .hero-form {
